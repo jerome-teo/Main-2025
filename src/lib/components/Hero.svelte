@@ -9,21 +9,21 @@
 		id="content"
 		class="z-10 flex flex-col items-center justify-center h-screen w-screen py-16 px-4 gap-5"
 	>
-		<img
+		<!-- <img
 			fetchpriority="high"
 			src="assets/hero/logo.svg"
 			alt="QWERHacks Logo"
 			class="w-full lg:w-8/12"
-		/>
-		<h2 class="text uppercase text-center text-4xl md:text-5xl lg:text-7xl">
+		/> -->
+		<!-- <h2 class="text uppercase text-center text-4xl md:text-5xl lg:text-7xl">
 			<span class="inline-block">feb 2-4, 2024</span> <span class="inline-block">@ ucla</span>
 		</h2>
 
 		<h3 class="font-jetbrains md:2xl lg:text-3xl text-white text-center textshadow">
 			MLH’s First LGBTQIA+ Hackathon!
-		</h3>
+		</h3> -->
 	</div>
-	<div class="absolute right-[8vw] bottom-[15vh] xl:bottom-[20vh]">
+	<!-- <div class="absolute right-[8vw] bottom-[15vh] xl:bottom-[20vh]">
 		<ShortcutIcon
 			title="Apply Now!"
 			src="assets/hero/rainbow.svg"
@@ -38,7 +38,7 @@
 			alt="An icon of a hand with a heart floating above it, with sparks flying out of the heart."
 			onclick="mailto:sponsor@qwerhacks.org"
 		/>
-	</div>
+	</div> -->
 	<div id="background" class="absolute top-0 right-0 -z-20 h-full w-full overflow-clip">
 		<Background />
 	</div>
