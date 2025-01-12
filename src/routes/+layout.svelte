@@ -10,69 +10,75 @@
 </script>
 
 <style>
-  :global(#about-postcard), :global(#ucla-postcard) { 
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotate(var(--tilt));
-    z-index: 10;
-  }
+	:global(#about-postcard), :global(#ucla-postcard) { 
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%) rotate(var(--tilt));
+		z-index: 10;
+	}
 
-  :global(#about-postcard) {
-    top: 75vh;
-  }
+	:global(#about-postcard) {
+		top: 45vw;
+	}
 
-  :global(#ucla-postcard) {
-    top: 130vh;
-  }
+	:global(#ucla-postcard) {
+		top: 75vw;
+	}
 
-  #about-div {
-    width: 250px;
-    position: absolute;
-    top: 17%;
-    left: 5%;
-    display: inline-block;
-  }
-  #about-text {
-    line-height: 2.8;
-	font-style: normal;
-	font-weight: 400;
-  }
-  #address-div {
-    width: 200px;
-    position: absolute; 
-    top: 43%;
-    right: 11%;
-  }
-  #address-text {
-    line-height: 2.5;
-  }
-  #different-div { 
-	width: 600px;
-	position: absolute;
-	top: 60%;
-	left: 10%;
-  }
-  #about-text, #address-text {
-	color: #534011;
-  }
-  p {
-	font-size: 14px;
-	font-family: 'Etna', serif;
-  }
-  #different-div p {
-	color: #4162BF;
-	line-height: 2;
-  }
-  #different-div .subtitle {
-	font-weight: 800;
-  }
-  #apply-now-btn-div {
-	position: absolute;
-	top: 85%;
-	left: 36%;
-	font-family: 'Etna', serif;
-  }
+	#about-div {
+		width: 250px;
+		position: absolute;
+		top: 17%;
+		left: 5%;
+		display: inline-block;
+	}
+	#about-text {
+		line-height: 2.8;
+		font-style: normal;
+		font-weight: 400;
+	}
+	#address-div {
+		width: 200px;
+		position: absolute; 
+		top: 43%;
+		right: 11%;
+	}
+	#address-text {
+		line-height: 2.5;
+	}
+	#different-div { 
+		width: 600px;
+		position: absolute;
+		top: 60%;
+		left: 10%;
+	}
+	#about-text, #address-text {
+		color: #534011;
+	}
+	p {
+		font-size: 14px;
+		font-family: 'Etna', serif;
+	}
+	#different-div p {
+		color: #4162BF;
+		line-height: 2;
+	}
+	#different-div .subtitle {
+		font-weight: 800;
+	}
+	#apply-now-btn-div {
+		position: absolute;
+		top: 85%;
+		left: 36%;
+		font-family: 'Etna', serif;
+	}
 
+	/* Media query for medium-sized screens */
+  	@media (max-aspect-ratio: 7/5) {
+		:global(#ucla-postcard) {
+			top: 85vw;
+		}
+	}
 	/* Media query for smaller screens */
     @media (max-aspect-ratio: 5/5) {
 		:global(#about-postcard) {
@@ -80,7 +86,7 @@
 			height: auto;
 			left: 50%; 
 			transform: translateX(-50%) rotate(var(--tilt));
-			top: 50vh;
+			top: 46vh;
 		}
 		#about-div {
 			top: 14%;
@@ -106,7 +112,7 @@
 			height: auto;
 			left: 50%; 
 			transform: translateX(-50%) rotate(var(--tilt));
-			top: 85vh;
+			top: 83vh;
 		}
 		#different-div { 
 			width: 385px;
