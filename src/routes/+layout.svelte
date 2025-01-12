@@ -3,13 +3,132 @@
 	import '../app.pcss';
 
 	import Header from '$lib/components/Header.svelte';
+	import Postcard from '../lib/components/Postcard.svelte';
+	import ApplyNowButton from '$lib/components/ApplyNowButton.svelte';
 
 	let header_height: number;
 </script>
 
+<style>
+  :global(#about-postcard), :global(#ucla-postcard) { 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(var(--tilt));
+    z-index: 10;
+  }
+
+  :global(#about-postcard) {
+    top: 75vh;
+  }
+
+  :global(#ucla-postcard) {
+    top: 130vh;
+  }
+
+  #about-div {
+    width: 250px;
+    position: absolute;
+    top: 17%;
+    left: 5%;
+    display: inline-block;
+  }
+  #about-text {
+    line-height: 2.8;
+	font-style: normal;
+	font-weight: 400;
+  }
+  #address-div {
+    width: 200px;
+    position: absolute; 
+    top: 43%;
+    right: 11%;
+  }
+  #address-text {
+    line-height: 2.5;
+  }
+  #different-div { 
+	width: 600px;
+	position: absolute;
+	top: 60%;
+	left: 10%;
+  }
+  #about-text, #address-text {
+	color: #534011;
+  }
+  p {
+	font-size: 14px;
+	font-family: 'Etna', serif;
+  }
+  #different-div p {
+	color: #4162BF;
+	line-height: 2;
+  }
+  #different-div .subtitle {
+	font-weight: 800;
+  }
+  #apply-now-btn-div {
+	position: absolute;
+	top: 85%;
+	left: 36%;
+	font-family: 'Etna', serif;
+  }
+
+	/* Media query for smaller screens */
+    @media (max-aspect-ratio: 5/5) {
+		:global(#about-postcard) {
+			width: 400px;
+			height: auto;
+			left: 50%; 
+			transform: translateX(-50%) rotate(var(--tilt));
+			top: 50vh;
+		}
+		#about-div {
+			top: 14%;
+			left: 5%;
+			width: 40%;
+		}
+		#about-text {
+			line-height: 1.2;
+			font-style: normal;
+			font-weight: 400;
+		}
+		#address-div {
+			top: 44%;
+			right: 3%;
+			width: 40%;
+		}
+		#address-text {
+			line-height: 1.6;
+		}
+
+		:global(#ucla-postcard) {
+			width: 450px;
+			height: auto;
+			left: 50%; 
+			transform: translateX(-50%) rotate(var(--tilt));
+			top: 85vh;
+		}
+		#different-div { 
+			width: 385px;
+			position: absolute;
+			top: 59%;
+			left: 7%;
+		}
+		#different-div p {
+			line-height: 1;
+		}
+		#apply-now-btn-div {
+			position: absolute;
+			top: 81%;
+			left: 30%;
+			font-family: 'Etna', serif;
+		}
+	}
+</style>
+
 <div class="gradient relative">
 	<!-- <Header bind:height={header_height} /> -->
-	<a
+	<a 
 		id="mlh-trust-badge"
 		style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
 		href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"
@@ -21,6 +140,53 @@
 		/></a
 	>
 	<div>
+		<Postcard 
+			backgroundImage="src/lib/media/About_Postcard.svg" 
+			width="630px"
+			height="356px"
+			tilt={4.5}
+			id='about-postcard'
+		>
+			<div id="about-div">
+				<p id="about-text">
+					QWER Hacks is here to bring LGBTQIA+ individuals and allies together to 
+					uplift marginalized communities. At our hackathon, we celebrate authenticity, 
+					promote inclusivity, and enable everyone to grow together.
+				</p>			
+			</div>
+
+			<div id="address-div">
+				<p id="address-text">
+					Feb 2-4, 2025 at UCLA <br>
+					405 Hilgard Ave <br>
+					Los Angeles, CA 90095 <br>
+					United States
+				</p>
+			</div>
+			
+		</Postcard>
+		<Postcard 
+			backgroundImage="src/lib/media/UCLA_Postcard.svg" 
+			width="707px"
+			height="745px"
+			tilt={-3}
+			id='ucla-postcard'
+		>
+			<div id="different-div">
+				<p class="subtitle">We’re not like other hackathons...</p>
+				<p>We are here to support your journey – we want you to thrive, grow, share your 
+					passions, and make something great</p>
+				<p>So what's that mean?<br>
+					This year, we want you to, learn to find real, impactful issues, make things 
+					to help your community & spread joy, and find new pals and pride in your identity
+				</p>
+			</div>
+
+			<div id="apply-now-btn-div">
+				<ApplyNowButton link="https://forms.gle/Vgign2Y7GMq8wbuRA" />
+			</div>
+			
+		</Postcard>
 		<slot />
 	</div>
 </div>
