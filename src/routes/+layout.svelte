@@ -10,11 +10,16 @@
 </script>
 
 <style>
+	:global(body) {
+		overflow-x: hidden;
+		width: 100vw;
+	}
 	:global(#about-postcard), :global(#ucla-postcard) { 
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%) rotate(var(--tilt));
 		z-index: 10;
+		/* max-width: 90vw; */
 	}
 
 	:global(#about-postcard) {
@@ -125,10 +130,27 @@
 		}
 		#apply-now-btn-div {
 			position: absolute;
-			top: 81%;
+			top: 83%;
 			left: 30%;
 			font-family: 'Etna', serif;
+			
 		}
+
+		/* Media query for very narrow screens */
+		@media (max-aspect-ratio: 8/5) {
+			#about-div {
+				left: 10%;
+				width: 38%;
+			}
+			#about-text {
+				line-height: 1.1;
+			}
+			#different-div { 
+				width: 340px;
+				left: 13%;
+			}
+		}
+		
 	}
 </style>
 

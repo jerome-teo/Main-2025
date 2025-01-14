@@ -23,6 +23,14 @@
   .apply-now-button:hover {
     transform: scale(1.05);
   }
+  @media (max-aspect-ratio: 8/5) {
+    .apply-now-button {
+      width: 150px;
+      height: 52px;
+      font-size: 12px;
+      padding-top: 10px;
+    }
+  }
 </style>
 
 <a href={link} target="_blank" class="apply-now-button">
