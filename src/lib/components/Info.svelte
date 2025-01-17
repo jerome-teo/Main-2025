@@ -4,123 +4,201 @@
 	import RetroButton from './utils/RetroButton.svelte';
 	import ShortcutIcon from './utils/ShortcutIcon.svelte';
 	import WindowBase from './utils/WindowBase.svelte';
+	import Postcard from './Postcard.svelte';
+	import ApplyNowButton from './ApplyNowButton.svelte';
 </script>
 
-<div class="p-4 flex flex-col pb-24 w-full">
-	<div
-		class="md-8 md:mt-[2vh] sm:ml-2 md:ml-[8vw] z-20 pointer-events-none flex flex-row items-center"
+<div>
+	<Postcard 
+		backgroundImage="src/lib/media/About_Postcard.svg" 
+		width="630px"
+		height="356px"
+		tilt={4.5}
+		id='about-postcard'
 	>
-		<WindowBase
-			title=""
-			textCenter={true}
-			background_val="linear-gradient(90deg, #EF5986 0.09%, #FFBFB1 16.22%, #FFE9B1 38.59%, #9FF4CB 58.37%, #92DEFF 78.14%, #C993FF 99.48%);"
-		>
-			<h2 class="font-fugaz text-3xl md:text-5xl uppercase">we're not like other hackathons</h2>
-			<p class="">
-				We really, actually, want to see you <span class="font-semibold">thrive</span>,
-				<span class="font-semibold">grow</span>, and <span class="font-semibold">share joy</span> with
-				tech, and maybe even
-			</p>
-			<p class="">
-				<span class="font-extrabold italic">✨make something great✨</span>
-			</p>
-		</WindowBase>
-		<div class="flex-row gap-8 px-12 md:pl-24 flex-grow hidden md:flex z-40">
-			<ShortcutIcon title="Raccoon<br>Memes" src="assets/intro/folder.svg" alt="Folder Icon" onclick="https://www.instagram.com/qwerhacks/guide/raccoon-memes/17895595787928608/?igshid=NjZiM2M3MzIxNA==" />
-			<!-- <ShortcutIcon title="Prizes" src="assets/intro/trophy.svg" alt="Folder Icon" /> -->
+		<div id="about-div">
+			<p id="about-text">
+				QWER Hacks is here to bring LGBTQIA+ individuals and allies together to 
+				uplift marginalized communities. At our hackathon, we celebrate authenticity, 
+				promote inclusivity, and enable everyone to grow together.
+			</p>			
 		</div>
-	</div>
-	<div class="mt-5 mr-4 md:mt-[-40px] md:mr-[8vw] z-10 self-end pointer-events-none flex flex-row items-center gap-16">
-		<div class="mt-[-10px] -rotate-6 hidden sm:block">
-			<Postit>
-				<p class="text-center text-lg">
-					Psst... Drag us :3
-				</p>
-			</Postit>
-		</div> 
-		<WindowBase
-			title=""
-			textCenter={true}
-			background_val="linear-gradient(90deg, #75ABE7 0%, #F1A4E5 100%);"
-			max_width="max-w-[80ch]"
-		>
-			<h2 class="normal-case">So what's that mean?</h2>
 
-			<div class="text-left">
-				<p>This year, we want you to:</p>
-				<ul class="font-jetbrains">
-					<li>Learn to find <span class="font-semibold">real, impactful issues</span></li>
-					<li>
-						Make things to <span class="font-semibold">help your community</span> &
-						<span class="font-semibold">spread joy</span>
-					</li>
-					<li>
-						Find new <span class="font-semibold">pals</span> and
-						<span class="font-semibold">pride in your identity</span>
-					</li>
-				</ul>
-			</div>
-		</WindowBase>
-	</div>
-	<div class="mt-5 mr-4 md:mt-[20px] md:mr-[8vw] self-center pointer-events-none">
-		<WindowBase
-			title=""
-			textCenter={true}
-			background_val="linear-gradient(to left, rgb(255, 51, 179), rgb(251, 88, 208), rgb(191, 122, 204), rgb(119, 97, 210), rgb(51, 101, 211))"
-			max_width="max-w-[50ch]"
-		>
-			<h2 class="uppercase">What are you waiting for?</h2>
+		<div id="address-div">
+			<p id="address-text">
+				Feb 2-4, 2025 at UCLA <br>
+				405 Hilgard Ave <br>
+				Los Angeles, CA 90095 <br>
+				United States
+			</p>
+		</div>
+		
+	</Postcard>
+	<Postcard 
+		backgroundImage="src/lib/media/UCLA_Postcard.svg" 
+		width="707px"
+		height="745px"
+		tilt={-3}
+		id='ucla-postcard'
+	>
+		<div id="different-div">
+			<p class="subtitle">We’re not like other hackathons...</p>
+			<p>We are here to support your journey – we want you to thrive, grow, share your 
+				passions, and make something great</p>
+			<p>So what's that mean?<br>
+				This year, we want you to, learn to find real, impactful issues, make things 
+				to help your community & spread joy, and find new pals and pride in your identity
+			</p>
+		</div>
 
-			<div class="text-center flex flex-col items-center">
-				<p class="p-5">First hackathon or hundredth, we want to see you here!</p>
-				<CleanButton>
-					<a class="sponsor text-3xl px-10 py-4 w-fit bg-animated" href="https://forms.gle/Vgign2Y7GMq8wbuRA">apply now!</a>
-				</CleanButton>
-			</div>
-		</WindowBase>
-	</div>
-
-	<!-- <Postit width="max-w-[35ch]">
-		<p class="text-center text-lg">
-			“I loved everything about the hackathon: the workshops, activities, energy, environment,
-			topics, and purpose!!! I can’t wait to see it all again at QWER Hacks 2024!”
-		</p>
-	</Postit>
-	<Postit width="max-w-[50ch]">
-		<p class="text-center text-lg">
-			“I really appreciated how inclusive QWER Hacks was. As someone in the LGBTQ+ community, I’ve
-			never felt overly comfortable being openly out - especially in STEM communities. I felt very
-			accepted and hearing everyone's stories and challenges was super inspiring. I loved the
-			presentations at the beginning, specially the one about housing issues, as they gave us real
-			accounts from those who experience the challenges of issues we seek to support through our
-			projects.”
-		</p>
-	</Postit> -->
+		<div id="apply-now-btn-div">
+			<ApplyNowButton link="https://forms.gle/Vgign2Y7GMq8wbuRA" />
+		</div>
+		
+	</Postcard>
 </div>
 
 <style>
-	.bg-animated {
-		background: linear-gradient(
-			to right,
-			rgb(85, 205, 252),
-			rgb(179, 157, 233),
-			rgb(247, 168, 184),
-			rgb(246, 216, 221),
-			rgb(255, 255, 255)
-		);
-		background-size: 400% 400%;
-		animation: gradient 30s ease infinite;
+	:global(body) {
+		overflow-x: hidden;
+		width: 100vw;
+	}
+	:global(#about-postcard), :global(#ucla-postcard) { 
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%) rotate(var(--tilt));
+		z-index: 10;
+		/* max-width: 90vw; */
 	}
 
-	@keyframes gradient {
-		0% {
-			background-position: 0% 50%;
+	:global(#about-postcard) {
+		top: 45vw;
+	}
+
+	:global(#ucla-postcard) {
+		top: 75vw;
+	}
+
+	#about-div {
+		width: 250px;
+		position: absolute;
+		top: 17%;
+		left: 5%;
+		display: inline-block;
+	}
+	#about-text {
+		line-height: 2.8;
+		font-style: normal;
+		font-weight: 400;
+	}
+	#address-div {
+		width: 200px;
+		position: absolute; 
+		top: 43%;
+		right: 11%;
+	}
+	#address-text {
+		line-height: 2.5;
+	}
+	#different-div { 
+		width: 600px;
+		position: absolute;
+		top: 60%;
+		left: 10%;
+	}
+	#about-text, #address-text {
+		color: #534011;
+	}
+	p {
+		font-size: 14px;
+		font-family: 'Etna', serif;
+	}
+	#different-div p {
+		color: #4162BF;
+		line-height: 2;
+	}
+	#different-div .subtitle {
+		font-weight: 800;
+	}
+	#apply-now-btn-div {
+		position: absolute;
+		top: 85%;
+		left: 36%;
+		font-family: 'Etna', serif;
+	}
+
+	/* Media query for medium-sized screens */
+  	@media (max-aspect-ratio: 7/5) {
+		:global(#ucla-postcard) {
+			top: 85vw;
 		}
-		50% {
-			background-position: 100% 50%;
+	}
+	/* Media query for smaller screens */
+    @media (max-aspect-ratio: 5/5) {
+		:global(#about-postcard) {
+			width: 400px;
+			height: auto;
+			left: 50%; 
+			transform: translateX(-50%) rotate(var(--tilt));
+			top: 46vh;
 		}
-		100% {
-			background-position: 0% 50%;
+		#about-div {
+			top: 14%;
+			left: 5%;
+			width: 40%;
 		}
+		#about-text {
+			line-height: 1.2;
+			font-style: normal;
+			font-weight: 400;
+		}
+		#address-div {
+			top: 44%;
+			right: 3%;
+			width: 40%;
+		}
+		#address-text {
+			line-height: 1.6;
+		}
+
+		:global(#ucla-postcard) {
+			width: 450px;
+			height: auto;
+			left: 50%; 
+			transform: translateX(-50%) rotate(var(--tilt));
+			top: 83vh;
+		}
+		#different-div { 
+			width: 385px;
+			position: absolute;
+			top: 59%;
+			left: 7%;
+		}
+		#different-div p {
+			line-height: 1;
+		}
+		#apply-now-btn-div {
+			position: absolute;
+			top: 83%;
+			left: 30%;
+			font-family: 'Etna', serif;
+			
+		}
+
+		/* Media query for very narrow screens */
+		@media (max-aspect-ratio: 8/5) {
+			#about-div {
+				left: 10%;
+				width: 38%;
+			}
+			#about-text {
+				line-height: 1.1;
+			}
+			#different-div { 
+				width: 340px;
+				left: 13%;
+			}
+		}
+		
 	}
 </style>
