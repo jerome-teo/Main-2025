@@ -104,7 +104,7 @@
 		</div>
 		<img src={Logo} alt="logo" class="qwerhacks-logo" />
 		<div class="date-text">
-			<h1 class="june text-white">Feb 2-4, 2025 {transitionProgress}</h1>
+			<h1 class="june text-white">Feb 2-4, 2025</h1>
 		</div>
 	</div>
 	<img src={Shrubs} alt="shrubs" class="shrubs" />
