@@ -39,9 +39,9 @@
 			onclick="mailto:sponsor@qwerhacks.org"
 		/>
 	</div> -->
-	<div id="background" class="absolute top-0 right-0 -z-20 h-full w-full overflow-clip">
+	<!-- <div id="background" class="absolute top-0 right-0 -z-20 h-full w-full overflow-clip"> -->
 		<Background />
-	</div>
+	<!-- </div> -->
 </div>
 
 <style lang="scss">
