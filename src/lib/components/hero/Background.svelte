@@ -149,7 +149,6 @@
 	.night {
 		z-index: 1;
 	}
-	@import url(https://fonts.adobe.com/fonts/june-expt-variable?vf-axes=STYL%2C63&vf-font-size=100&vf-font=JuneExptVariable-Active);
 	.june {
 		font-family: 'june-expt-variable', sans-serif;
 		font-variation-settings: 'STYL' 20;
@@ -268,11 +267,5 @@
 		.date-text {
 			top: calc(28vw + 4rem);
 		}
-	}
-	@font-face {
-		font-family: 'june-expt-variable';
-		src: url('$lib/fonts/june-expt-curious.otf') format('truetype'); /* Update the path as necessary */
-		font-weight: normal;
-		font-style: normal;
 	}
 </style>
