@@ -1,6 +1,9 @@
 <script lang="ts">
 	import TopHill from '$lib/media/Top_Hill.svg';
 	import Logo from '$lib/media/QWERHACKS_Logo.svg';
+	import Logo_Day from '$lib/media/logo_day.svg';
+	import Logo_Night from '$lib/media/logo_night.svg';
+
 	import Shrubs from '$lib/media/Shrubs.svg';
 	import Hill from '$lib/media/Hill.svg';
 	import Hill_Day from '$lib/media/hill_day.svg';
@@ -97,17 +100,40 @@
 		class="w-full top-hill night"
 		style="opacity: {transitionProgress}"
 	/>
-
-	<div class="logo-container">
-		<div class="greeting-text">
-			<h1 class="june text-white">Greetings From</h1>
-		</div>
-		<img src={Logo} alt="logo" class="qwerhacks-logo" />
-		<div class="date-text">
-			<h1 class="june text-white">Feb 2-4, 2025</h1>
+	<div class="w-full items-end object-right flex justify-end">
+		<div class="logo-container" style="align-items: flex-end; right:3%;">
+			<!-- <div class="greeting-text"> -->
+			<div class="text-left" style="width: 100%; z-index: 4;">
+				<h1 class="june text-white">Greetings From</h1>
+			</div>
+			<div class="qwerhacks-container">
+				<div class="wrapper" style="position: relative;">
+					<img
+						src={Logo_Day}
+						alt="logo"
+						class="qh-logo day"
+						style="opacity: {1 - transitionProgress}"
+					/>
+					<img
+						src={Logo_Night}
+						alt="logo"
+						class="qh-logo night"
+						style="opacity: {transitionProgress}"
+					/>
+					<img
+						src={Logo_Day}
+						alt="logo"
+						class="qh-logo-placeholder"
+						style=" width: 100%;height: auto;visibility: hidden;"
+					/>
+				</div>
+				<!-- <div class="date-text"> -->
+			</div>
+			<div class="text-right" style="width: 100%; z-index: 4;">
+				<h1 class="june text-white">Feb 2-4, 2025</h1>
+			</div>
 		</div>
 	</div>
-	<img src={Shrubs} alt="shrubs" class="shrubs" />
 </div>
 
 <style lang="scss">
@@ -127,12 +153,13 @@
 	.june {
 		font-family: 'june-expt-variable', sans-serif;
 		font-variation-settings: 'STYL' 20;
-		font-size: 4vw;
+		font-size: 2rem;
+		z-index: 4;
 	}
 	.full-background {
 		// background-color: #92ceff; /* Set background to #92ceff */
 		width: 100%;
-		height: 100%;
+		min-height: 100vh;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -142,13 +169,13 @@
 
 	.date-text,
 	.greeting-text {
-		position: relative;
-		// text-align: left;
-		// align-items: left;
-		top: clamp(10vh, 35vh, 40vh); /* Adjust vertical position */
+		// position: relative;
+		// // text-align: left;
+		// // align-items: left;
+		// top: clamp(10vh, 35vh, 40vh); /* Adjust vertical position */
 
-		right: 5%; /* Aligns the logo to the right with some padding */
-		width: 66%; /* 2/3 of the container's width */
+		// right: 5%; /* Aligns the logo to the right with some padding */
+		// width: 66%; /* 2/3 of the container's width */
 
 		z-index: 4;
 	}
@@ -160,21 +187,23 @@
 
 		z-index: 2; /* Ensures it’s above the background */
 	}
-	.shrubs {
-		position: absolute;
-		top: clamp(40vh, 50vh, 60vh); /* Adjust vertical position */
-		right: 5%; /* Aligns the logo to the right with some padding */
-		width: 60%; /* 2/3 of the container's width */
 
-		z-index: 3; /* Ensures it’s above the background */
-	}
 	.logo-container {
-		display: flex; /* Use flexbox for alignment */
-		flex-direction: column; /* Stack the items vertically */
-		// align-items: center; /* Center the text and logo horizontally */
-		gap: 1rem; /* Add spacing between the items */
+		// display: flex; /* Use flexbox for alignment */
+		// flex-direction: column; /* Stack the items vertically */
+		// // align-items: center; /* Center the text and logo horizontally */
+		// gap: 1rem; /* Add spacing between the items */
+		// width: 66%; /* Width for the logo and its container */
+		// z-index: 2; /* Ensure it's above the background */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 		width: 66%; /* Width for the logo and its container */
-		z-index: 2; /* Ensure it's above the background */
+
+		height: 100vh; /* Ensure full screen height */
+		position: relative;
 	}
 
 	.date-text,
@@ -191,6 +220,24 @@
 	.date-text {
 		text-align: right; /* Align text to the center */
 		// top: calc(36vw + 4rem);
+	}
+	.qwerhacks-container {
+		position: relative;
+		// display: flex;
+		display: inline-block;
+
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		// height: 30%;
+	}
+	.qh-logo {
+		width: 100%; /* Make sure it fits the container */
+		height: auto; /* Maintain aspect ratio */
+		position: absolute;
+		left: 0;
+		top: 0;
+		// transition: opacity 1s ease-in-out;
 	}
 	@media (max-aspect-ratio: 5/5) {
 		.qwerhacks-logo {

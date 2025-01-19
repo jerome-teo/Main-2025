@@ -9,12 +9,81 @@
 	let header_height: number;
 </script>
 
+<div class="gradient relative">
+	<!-- <Header bind:height={header_height} /> -->
+	<a
+		id="mlh-trust-badge"
+		style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
+		href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"
+		target="_blank"
+		><img
+			src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-yellow.svg"
+			alt="Major League Hacking 2024 Hackathon Season"
+			style="width:100%"
+		/></a
+	>
+	<div>
+		<Postcard
+			backgroundImage="src/lib/media/About_Postcard.svg"
+			width="630px"
+			height="356px"
+			tilt={4.5}
+			id="about-postcard"
+		>
+			<div id="about-div">
+				<p class="about-header">About,</p>
+				<p id="about-text">
+					QWER Hacks is here to bring LGBTQIA+ individuals and allies together to uplift
+					marginalized communities. At our hackathon, we celebrate authenticity, promote
+					inclusivity, and enable everyone to grow together.
+				</p>
+			</div>
+
+			<div id="address-div">
+				<p id="address-text">
+					Feb 2-4, 2025 at UCLA <br />
+					405 Hilgard Ave <br />
+					Los Angeles, CA 90095 <br />
+					United States
+				</p>
+			</div>
+		</Postcard>
+		<Postcard
+			backgroundImage="src/lib/media/UCLA_Postcard.svg"
+			width="707px"
+			height="745px"
+			tilt={-3}
+			id="ucla-postcard"
+		>
+			<div id="different-div">
+				<p class="subtitle">We’re not like other hackathons...</p>
+				<p>
+					We are here to support your journey – we want you to thrive, grow, share your passions,
+					and make something great
+				</p>
+				<p>
+					So what's that mean?<br />
+					This year, we want you to, learn to find real, impactful issues, make things to help your community
+					& spread joy, and find new pals and pride in your identity
+				</p>
+			</div>
+
+			<div id="apply-now-btn-div">
+				<ApplyNowButton link="https://forms.gle/Vgign2Y7GMq8wbuRA" />
+			</div>
+		</Postcard>
+		<slot />
+	</div>
+</div>
+
 <style>
 	:global(body) {
-		overflow-x: hidden;
+		/* overflow-x: hidden; */
 		width: 100vw;
 	}
-	:global(#about-postcard), :global(#ucla-postcard) { 
+
+	:global(#about-postcard),
+	:global(#ucla-postcard) {
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%) rotate(var(--tilt));
@@ -44,20 +113,21 @@
 	}
 	#address-div {
 		width: 200px;
-		position: absolute; 
+		position: absolute;
 		top: 43%;
 		right: 11%;
 	}
 	#address-text {
 		line-height: 2.5;
 	}
-	#different-div { 
+	#different-div {
 		width: 600px;
 		position: absolute;
 		top: 60%;
 		left: 10%;
 	}
-	#about-text, #address-text {
+	#about-text,
+	#address-text {
 		color: #534011;
 	}
 	p {
@@ -65,7 +135,7 @@
 		font-family: 'Etna', serif;
 	}
 	#different-div p {
-		color: #4162BF;
+		color: #4162bf;
 		line-height: 2;
 	}
 	#different-div .subtitle {
@@ -79,17 +149,23 @@
 	}
 
 	/* Media query for medium-sized screens */
-  	@media (max-aspect-ratio: 7/5) {
+	@media (max-aspect-ratio: 7/5) {
 		:global(#ucla-postcard) {
 			top: 85vw;
 		}
 	}
+	.about-header {
+		font-weight: bold;
+		font-family: 'Etna', serif;
+		color: #534011;
+		font-size: 24px;
+	}
 	/* Media query for smaller screens */
-    @media (max-aspect-ratio: 5/5) {
+	@media (max-aspect-ratio: 5/5) {
 		:global(#about-postcard) {
 			width: 400px;
 			height: auto;
-			left: 50%; 
+			left: 50%;
 			transform: translateX(-50%) rotate(var(--tilt));
 			top: 46vh;
 		}
@@ -115,11 +191,11 @@
 		:global(#ucla-postcard) {
 			width: 450px;
 			height: auto;
-			left: 50%; 
+			left: 50%;
 			transform: translateX(-50%) rotate(var(--tilt));
 			top: 83vh;
 		}
-		#different-div { 
+		#different-div {
 			width: 385px;
 			position: absolute;
 			top: 59%;
@@ -133,7 +209,6 @@
 			top: 83%;
 			left: 30%;
 			font-family: 'Etna', serif;
-			
 		}
 
 		/* Media query for very narrow screens */
@@ -145,76 +220,10 @@
 			#about-text {
 				line-height: 1.1;
 			}
-			#different-div { 
+			#different-div {
 				width: 340px;
 				left: 13%;
 			}
 		}
-		
 	}
 </style>
-
-<div class="gradient relative">
-	<!-- <Header bind:height={header_height} /> -->
-	<a 
-		id="mlh-trust-badge"
-		style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
-		href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"
-		target="_blank"
-		><img
-			src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-yellow.svg"
-			alt="Major League Hacking 2024 Hackathon Season"
-			style="width:100%"
-		/></a
-	>
-	<div>
-		<Postcard 
-			backgroundImage="src/lib/media/About_Postcard.svg" 
-			width="630px"
-			height="356px"
-			tilt={4.5}
-			id='about-postcard'
-		>
-			<div id="about-div">
-				<p id="about-text">
-					QWER Hacks is here to bring LGBTQIA+ individuals and allies together to 
-					uplift marginalized communities. At our hackathon, we celebrate authenticity, 
-					promote inclusivity, and enable everyone to grow together.
-				</p>			
-			</div>
-
-			<div id="address-div">
-				<p id="address-text">
-					Feb 2-4, 2025 at UCLA <br>
-					405 Hilgard Ave <br>
-					Los Angeles, CA 90095 <br>
-					United States
-				</p>
-			</div>
-			
-		</Postcard>
-		<Postcard 
-			backgroundImage="src/lib/media/UCLA_Postcard.svg" 
-			width="707px"
-			height="745px"
-			tilt={-3}
-			id='ucla-postcard'
-		>
-			<div id="different-div">
-				<p class="subtitle">We’re not like other hackathons...</p>
-				<p>We are here to support your journey – we want you to thrive, grow, share your 
-					passions, and make something great</p>
-				<p>So what's that mean?<br>
-					This year, we want you to, learn to find real, impactful issues, make things 
-					to help your community & spread joy, and find new pals and pride in your identity
-				</p>
-			</div>
-
-			<div id="apply-now-btn-div">
-				<ApplyNowButton link="https://forms.gle/Vgign2Y7GMq8wbuRA" />
-			</div>
-			
-		</Postcard>
-		<slot />
-	</div>
-</div>
