@@ -150,7 +150,9 @@
 		z-index: 1;
 	}
 	.june {
-		font-family: 'june-expt-variable', sans-serif;
+		// font-family: 'june-expt-variable', sans-serif;
+		font-family: 'JuneExptVariable', sans-serif;
+
 		font-variation-settings: 'STYL' 20;
 		font-size: 2rem;
 		z-index: 4;
