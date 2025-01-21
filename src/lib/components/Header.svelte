@@ -6,17 +6,17 @@
 
 	const formatTwoDigit = (n: number) => {
 		return n < 10 ? `0${n}` : `${n}`;
-	}
+	};
 
 	export let height: number = 0;
 
 	let headerElement: HTMLElement;
-	
+
 	onMount(() => {
 		tick().then(() => {
 			height = headerElement.offsetHeight;
 		});
-		
+
 		window.addEventListener('resize', () => {
 			height = headerElement.offsetHeight;
 		});
@@ -30,7 +30,7 @@
 </script>
 
 <div
-	class="hidden sm:flex fixed top-0 left-0 z-[200] w-full h-[80px] px-4 py-10 align-center whiteborder"
+	class="hidden sm:flex fixed top-0 left-0 z-[200] w-full h-[80px] px-4 py-10 align-center"
 	bind:this={headerElement}
 >
 	<div class="flex flex-row line w-[100%]" role="navigation">
