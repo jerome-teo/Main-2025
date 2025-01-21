@@ -6,16 +6,12 @@
 	import WindowBase from './utils/WindowBase.svelte';
 	import Postcard from './Postcard.svelte';
 	import ApplyNowButton from './ApplyNowButton.svelte';
+	import About from '$lib/media/About_Postcard.svg';
+	import UCLA from '$lib/media/UCLA_Postcard.svg';
 </script>
 
 <div>
-	<Postcard
-		backgroundImage="src/lib/media/About_Postcard.svg"
-		width="630px"
-		height="356px"
-		tilt={4.5}
-		id="about-postcard"
-	>
+	<Postcard backgroundImage={About} width="630px" height="356px" tilt={4.5} id="about-postcard">
 		<div id="about-div">
 			<p class="about-header">About:</p>
 			<p id="about-text">
@@ -34,13 +30,7 @@
 			</p>
 		</div>
 	</Postcard>
-	<Postcard
-		backgroundImage="src/lib/media/UCLA_Postcard.svg"
-		width="707px"
-		height="745px"
-		tilt={-3}
-		id="ucla-postcard"
-	>
+	<Postcard backgroundImage={UCLA} width="707px" height="745px" tilt={-3} id="ucla-postcard">
 		<div id="different-div">
 			<p class="subtitle">We’re not like other hackathons...</p>
 			<p>
