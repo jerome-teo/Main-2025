@@ -1,7 +1,5 @@
 <script lang="ts">
 	import Background from '$lib/components/hero/Background.svelte';
-	import RetroButton from './utils/RetroButton.svelte';
-	import ShortcutIcon from './utils/ShortcutIcon.svelte';
 </script>
 
 <div class="h-screen relative w-screen" style="z-index: 9;">

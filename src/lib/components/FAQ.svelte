@@ -1,8 +1,4 @@
 <script lang="ts">
-	import CleanButton from './utils/CleanButton.svelte';
-	import Postit from './q&a/Postit.svelte';
-	import ShortcutIcon from './utils/ShortcutIcon.svelte';
-	import WindowBase from './utils/WindowBase.svelte';
 	import Passport from '$lib/media/Passport.svg';
 	import ApplyNowButton from './ApplyNowButton.svelte';
 

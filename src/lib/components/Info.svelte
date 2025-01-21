@@ -1,9 +1,4 @@
 <script lang="ts">
-	import Postit from './q&a/Postit.svelte';
-	import CleanButton from './utils/CleanButton.svelte';
-	import RetroButton from './utils/RetroButton.svelte';
-	import ShortcutIcon from './utils/ShortcutIcon.svelte';
-	import WindowBase from './utils/WindowBase.svelte';
 	import Postcard from './Postcard.svelte';
 	import ApplyNowButton from './ApplyNowButton.svelte';
 	import About from '$lib/media/About_Postcard.svg';
