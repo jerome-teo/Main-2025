@@ -45,7 +45,7 @@
 		</div>
 
 		<div id="apply-now-btn-div">
-			<ApplyNowButton link="https://forms.gle/Vgign2Y7GMq8wbuRA" />
+			<ApplyNowButton link="https://tinyurl.com/qwerhacks25" />
 		</div>
 	</Postcard>
 </div>
