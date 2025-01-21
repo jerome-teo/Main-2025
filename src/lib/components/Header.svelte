@@ -51,7 +51,7 @@
 				<button on:click={() => scrollTop()}>Sponsors</button>
 			</SleekButton>
 			<OvalButton>
-				<a class="apply" href="/apply">Apply Now!</a>
+				<a class="apply" href="https://forms.gle/Vgign2Y7GMq8wbuRA">Apply Now!</a>
 			</OvalButton>
 		</div>
 	</div>
