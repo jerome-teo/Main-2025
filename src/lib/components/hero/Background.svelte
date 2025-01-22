@@ -130,7 +130,7 @@
 				<!-- <div class="date-text"> -->
 			</div>
 			<div class="text-right" style="width: 100%; z-index: 4;">
-				<h1 class="june text-white">Feb 2-4, 2025</h1>
+				<h1 class="june text-white">Feb 1-2, 2025</h1>
 			</div>
 		</div>
 	</div>
