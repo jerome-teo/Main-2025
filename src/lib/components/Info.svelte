@@ -23,7 +23,7 @@
 
 		<div id="address-div">
 			<p id="address-text">
-				Feb 2-4, 2025 at UCLA <br />
+				Feb 1-2, 2025 at UCLA <br />
 				405 Hilgard Ave <br />
 				Los Angeles, CA 90095 <br />
 				United States
