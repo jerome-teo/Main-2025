@@ -10,7 +10,6 @@
 	.apply-now-button {
 		background: url('/src/lib/media/Apply_Now_Button.svg') no-repeat center center;
 		background-size: cover;
-		font-family: 'Etna', 'Times';
 		font-size: 15px;
 		font-weight: 800;
 		color: #4162bf;

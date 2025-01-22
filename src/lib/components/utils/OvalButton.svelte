@@ -1,4 +1,4 @@
-<div class="font-etna">
+<div>
 	<slot />
 </div>
 

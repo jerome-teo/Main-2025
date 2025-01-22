@@ -1,3 +1,3 @@
-<div class="font-etna m-2">
+<div class="m-2">
 	<slot />
 </div>

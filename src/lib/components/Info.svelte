@@ -69,7 +69,6 @@
 
 	.about-header {
 		font-weight: bold;
-		font-family: 'Etna', serif;
 		color: #534011;
 		font-size: 24px;
 	}
@@ -106,7 +105,6 @@
 	}
 	p {
 		font-size: 14px;
-		font-family: 'Etna', serif;
 	}
 	#different-div p {
 		color: #4162bf;
@@ -119,7 +117,6 @@
 		position: absolute;
 		top: 85%;
 		left: 36%;
-		font-family: 'Etna', serif;
 	}
 
 	/* Media query for medium-sized screens */
@@ -176,7 +173,6 @@
 			position: absolute;
 			top: 83%;
 			left: 30%;
-			font-family: 'Etna', serif;
 		}
 
 		/* Media query for very narrow screens */

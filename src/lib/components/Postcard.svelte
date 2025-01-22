@@ -23,7 +23,6 @@
 		width: var(--width);
 		height: var(--height);
 		position: relative;
-		font-family: 'Etna', 'Times New Roman', Times, serif;
 	}
 	.postcard img {
 		width: 100%;
