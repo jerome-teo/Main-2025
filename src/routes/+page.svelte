@@ -7,3 +7,4 @@
 
 <Hero />
 <Info />
+<FAQ />

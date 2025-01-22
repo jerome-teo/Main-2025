@@ -65,11 +65,11 @@
 	}
 
 	:global(#about-postcard) {
-		top: 45vw;
+		top: 55vw;
 	}
 
 	:global(#ucla-postcard) {
-		top: 75vw;
+		top: 90vw;
 	}
 
 	.about-header {

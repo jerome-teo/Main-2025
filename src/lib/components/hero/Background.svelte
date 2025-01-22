@@ -114,12 +114,7 @@
 						class="qh-logo day"
 						style="opacity: {1 - transitionProgress}"
 					/>
-					<img
-						src={Logo_Night}
-						alt="logo"
-						class="qh-logo night"
-						style="opacity: {transitionProgress}"
-					/>
+					<img src={Logo_Night} alt="logo" class="qh-logo night" style="opacity: 1" />
 					<img
 						src={Logo_Day}
 						alt="logo"

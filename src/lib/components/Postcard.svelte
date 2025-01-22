@@ -9,19 +9,12 @@
 	let anchor: HTMLAnchorElement | HTMLButtonElement;
 </script>
 
-<Draggable {slotRef} draggableTargetRef={slotRef} click_callback={() => anchor.click()}>
-	<div
-		bind:this={slotRef}
-		class="postcard"
-		{id}
-		style="--tilt: {tilt}deg; --width: {width}; --height: {height};"
-	>
-		<img src={backgroundImage} alt="Postcard background" />
-		<div class="postcard-content">
-			<slot></slot>
-		</div>
+<div class="postcard" {id} style="--tilt: {tilt}deg; --width: {width}; --height: {height};">
+	<img src={backgroundImage} alt="Postcard background" />
+	<div class="postcard-content">
+		<slot></slot>
 	</div>
-</Draggable>
+</div>
 
 <style>
 	.postcard {

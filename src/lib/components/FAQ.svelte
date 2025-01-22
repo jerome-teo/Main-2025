@@ -1,152 +1,145 @@
 <script lang="ts">
-	import CleanButton from "./utils/CleanButton.svelte";
+	import CleanButton from './utils/CleanButton.svelte';
 	import Postit from './q&a/Postit.svelte';
 	import ShortcutIcon from './utils/ShortcutIcon.svelte';
 	import WindowBase from './utils/WindowBase.svelte';
+	import Passport from '$lib/media/Passport.svg';
+	import ApplyNowButton from './ApplyNowButton.svelte';
 
-    let faqs = [
-        {   
-            question: "Who can come to QWER Hacks?", 
-            answer: "Anyone who is 18 or older, a member (or ally) of the LGBTQIA+ community, and enrolled in a postsecondary academic institution!"
-        },
-        {
-            question: "How do teams work?",
-            answer: "Teams consist of 2-4 hackers! Each member should submit an application. Don’t have a team? No worries! We’ll help you find one at the hackathon!"
-        },
-        {
-            question: "What are the tracks?",
-            answer: "We want to see projects that matter to you and your community, so this year we're going to have a lot more topics than usual!<br>More info TBA soon, but there'll be speakers, topics, and workshops galore. For now, start thinking about what could have real impact for your or an underserved community, and know that not every project needs to be the next SAAS startup to be impactful!"
-        },
-        {
-            question: "How much does attending QWER Hacks cost?",
-            answer: "It's free, babey!"
-        },
-        {
-            question: "QWER Hacks sounds super cool! I totes wanna go. How do I apply?",
-            answer: "Click the button below!"
-        }
-    ]
-        let messagebox = "can't wait to go :>"
-
+	let faqs = [
+		{
+			question: 'Who can come to QWER Hacks?',
+			answer:
+				'Anyone who is 18 or older, a member (or ally) of the LGBTQIA+ community, and enrolled in a postsecondary academic institution!'
+		},
+		{
+			question: 'How do teams work?',
+			answer:
+				'Teams consist of 2-4 hackers! Each member should submit an application. Don’t have a team? No worries! We’ll help you find one at the hackathon!'
+		},
+		{
+			question: 'What are the tracks?',
+			answer: 'Sustain, adventure, and celebrate!'
+		},
+		{
+			question: 'How much does attending QWER Hacks cost?',
+			answer: "It's free, babey!"
+		}
+	];
+	let details = [
+		{ category: 'Surname', detail: 'Hacker' },
+		{ category: 'Given Name', detail: 'Awesome' },
+		{
+			category: 'Location',
+			detail: '405 Hilgard Ave,<br />Los Angeles, CA<br />90095<br />United States'
+		}
+	];
+	let messagebox = "can't wait to go :>";
 </script>
 
-<div class="p-4 flex flex-col pb-24 w-full">
-	<div
-		class="md-8 md:mt-[2vh] sm:ml-2 md:ml-[8vw] z-10 pointer-events-none flex flex-row items-center"
+<div>
+	<h1
+		class="w-full"
+		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; top:322%;font-weight: bolder;"
 	>
-		<WindowBase
-			title=""
-			textCenter={true}
-			background_val="linear-gradient(90deg, #FFBFB1 0.09%, #FE857D 99.48%);"
-            main_bg_val="bg-[#E7E5E5]"
-            style_str="gap: 2rem"
-		>
-            <div>
-                <div class="inner">
-                    <h2 class="font-fugaz text-3xl md:text-5xl uppercase text-center">Q&A</h2>
-                    {#each faqs as faq, i}
-                        <div class="item">
-                            <p class="question">{faq.question}</p>
-                            <p class="answer">{@html faq.answer}</p>
-                        </div>
-                    {/each}
-                </div>
-                <!-- <div class="scrollbar">
-                    <div class="arrow up" />
-                    <div class="slider" />
-                    <div class="arrow down" />
-                </div> -->
-            </div>
-            <div class="buttons">
-                <div class="hidden sm:flex flex-col items-center justify-center"><p>{messagebox}</p></div>
-                <CleanButton>
-                    <a class="text-3xl px-10 py-4 w-fit bg-animated" href="https://forms.gle/Vgign2Y7GMq8wbuRA">apply!</a> 
-                </CleanButton>
-            </div>
-		</WindowBase>
+		Frequently Asked Questions
+	</h1>
+	<div class="passport">
+		<img src={Passport} class="passport-bg" alt="QWERHacks Passport" />
+
+		<div class="faq-section h-1/2">
+			{#each faqs as faq}
+				<p class="category">{faq.question}</p>
+				<p class="detail">{@html faq.answer}</p>
+			{/each}
+		</div>
+
+		<div class="details-section h-1/2">
+			<div class="flex flex-row">
+				<div class="w-1/3">
+					<p class="category">QH PASSPORT</p>
+				</div>
+				<div class="w-1/3 details">
+					{#each details as item}
+						<div class="detail-item">
+							<p class="category">{item.category.toUpperCase()}</p>
+							<p class="detail">{@html item.detail}</p>
+						</div>
+					{/each}
+				</div>
+				<div class="w-1/2">
+					<p class="qh-passport">QWERHacks Passport</p>
+					<br />
+					<p class="category">TIME:</p>
+					<p class="detail">Feb 1-2</p>
+					<div class="apply-now-btn-div">
+						<ApplyNowButton link="https://tinyurl.com/qwerhacks25"></ApplyNowButton>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
 <style lang="scss">
-    .inner {
-        @apply p-6;
-        background: white;
-        border: solid 5px #200B3A;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        .item {
-            text-align: left;
-            > * {
-                margin-bottom: 1rem;
-            }
-            .question {
-                &:before {
-                    font-weight: bold;
-                    content: 'TRASHPANDA123 (YOU)\a';
-                    white-space: pre;
-                    color: #ACE1E9;
-                }
-            }
-            .answer {
-                &:before {
-                    font-weight: bold;
-                    content: 'QWERHACKS_TEAM \a';
-                    white-space: pre;
-                    color: #EEAEB6;
-                }
-            }
-        }
-    }
-    .scrollbar {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        border: solid 5px #200B3A;
-        border-width: 0px 5px;
-        * {
-            border: solid 5px #200B3A;
-            border-width: 5px 0px;
-        }
-        background: #C9CEE1;
-        display: grid;
-        grid-template-rows: 1fr 20fr 1fr;
-        .arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            &.up:before {
-                content: '▲';
-            }
-            &.down:before {
-                content: '▼';
-            }
-            color: black;
-        }
-        .slider {
-            background: #A7A7A7;
-            height: 50%;
-            margin-top: 69px;
-        }
-    }
-    .buttons {
-        font-family: 'Reactor7', monospace;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 80%;
-        gap: 1rem;
-        div {
-            width: 60%;
-            background: white;
-            border: solid 5px #200B3A;
-            @apply p-2;
+	h2,
+	h1,
+	p {
+		color: #4162bf;
+		font-family: Etna;
+		line-height: 1.5;
+	}
+	.details {
+		gap: 1px;
+	}
+	.detail {
+		font-size: 0.9rem;
+		font-weight: bold;
+		margin-bottom: 3%;
+	}
+	.category {
+		font-size: 0.6rem;
 
-        }
-        // a {
-        //     width: max(20%, 150px);
-        //     box-shadow: 5px 5px 0px #200B3A;
-        // }
-    }
+		margin-bottom: 0;
+		// font-weight: bold;
+	}
+	.qh-passport {
+		font-size: 1.5rem;
+		font-weight: bolder;
+	}
+	.passport {
+		position: absolute;
+		top: 340%;
+		left: 20%;
+		width: 60%;
+		height: auto;
+		z-index: 11;
+	}
+
+	.passport-bg {
+		width: 100%;
+	}
+
+	.faq-section {
+		position: absolute;
+		top: 5%;
+		left: 10%;
+		width: 80%;
+		font-family: 'Georgia', serif;
+		font-size: 18px;
+		color: #1e1e1e;
+	}
+
+	.details-section {
+		position: absolute;
+		top: 55%;
+		left: 10%;
+		width: 80%;
+	}
+
+	.apply-now-btn-div {
+		position: absolute;
+		bottom: 16%;
+		right: -5%;
+	}
 </style>
