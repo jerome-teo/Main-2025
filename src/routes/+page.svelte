@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Hero from '$lib/components/Hero.svelte';
 	import Info from '$lib/components/Info.svelte';
 	import FAQ from '$lib/components/FAQ.svelte';
+	import Background from '$lib/components/hero/Background.svelte';
 </script>
 
-<Hero />
+<Background />
 <Info />
 <FAQ />
