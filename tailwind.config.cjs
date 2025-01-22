@@ -1,30 +1,30 @@
 /** @type {import('tailwindcss').Config}*/
 const config = {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 
-  theme: {
-    extend: {
-      colors: {
-        lavender: {
-          DEFAULT: "#B682DA"
-        },
-        darkblue: {
-          DEFAULT: '#200B3A'
-        },
-				indigo: {
-					DEFAULT: "#3A0B75"
+	theme: {
+		extend: {
+			colors: {
+				lavender: {
+					DEFAULT: '#B682DA'
 				},
-      },
+				darkblue: {
+					DEFAULT: '#200B3A'
+				},
+				indigo: {
+					DEFAULT: '#3A0B75'
+				}
+			},
 
 			fontFamily: {
-        etna: ["Etna", "serif"],
-				fugaz: ["Fugaz One", "sans"],
-				jetbrains: ["JetBrainsMono", "mono"],
-			},
-    }
-  },
+				etna: ['Etna', 'serif'],
+				fugaz: ['Fugaz One', 'sans'],
+				jetbrains: ['JetBrainsMono', 'mono']
+			}
+		}
+	},
 
-  plugins: []
+	plugins: []
 };
 
 module.exports = config;

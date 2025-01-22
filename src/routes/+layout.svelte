@@ -6,7 +6,7 @@
 </script>
 
 <div class="gradient relative">
-	<a 
+	<a
 		id="mlh-trust-badge"
 		style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
 		href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"

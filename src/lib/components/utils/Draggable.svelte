@@ -298,7 +298,7 @@
 			document.body.style.userSelect = 'none';
 
 			makeInvisibleDiv();
-			
+
 			bringToTop(internalName);
 			component_dragging = internalName;
 		}
