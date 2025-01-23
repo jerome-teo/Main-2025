@@ -40,7 +40,7 @@
 <div>
 	<h1
 		class="w-full"
-		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; top:322%;font-weight: bolder;"
+		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; top:322%; font-size: 5vw; font-weight: bolder;"
 	>
 		Frequently Asked Questions
 	</h1>
@@ -89,24 +89,39 @@
 		font-family: Etna;
 		line-height: 1.5;
 	}
+
+	// @media (max-width: 500px) {
+	// 	h1 {
+	// 		font-size: 1.5rem;
+	// 	}
+	// 	p {
+	// 		font-size: 0.4rem;
+	// 	}
+	// 	.qh-passport .category .detail {
+	// 		font-size: 2px;
+	// 	}
+	// }
 	.details {
 		gap: 1px;
 	}
+
+	// @media (min-width: 500px) {
 	.detail {
-		font-size: 0.9rem;
+		font-size: 1.4vw;
 		font-weight: bold;
 		margin-bottom: 3%;
 	}
 	.category {
-		font-size: 0.6rem;
+		font-size: 1.2vw;
 
 		margin-bottom: 0;
 		// font-weight: bold;
 	}
 	.qh-passport {
-		font-size: 1.5rem;
+		font-size: 2vw;
 		font-weight: bolder;
 	}
+	// }
 	.passport {
 		position: absolute;
 		top: 340%;
