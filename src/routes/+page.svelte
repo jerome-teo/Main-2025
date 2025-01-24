@@ -5,7 +5,7 @@
 	import Tracks from '$lib/components/Tracks.svelte';
 </script>
 
-<div class="mr-3 flex flex-col sm:mr-7">
+<div class="mx-3 flex flex-col sm:mx-7 mt-30 md:mt-50 lg:mt-75">
 	<Hero />
 	<Info />
 	<Tracks />

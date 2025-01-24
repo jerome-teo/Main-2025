@@ -21,18 +21,16 @@
 	}
 </script>
 
-<div class="gradient relative">
-	<a
-		id="mlh-trust-badge"
-		class="fixed top-0 right-[50px] z-10000 block w-[10%] max-w-[100px] min-w-[60px]"
-		href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"
-		target="_blank"
-		><img
-			src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-yellow.svg"
-			alt="Major League Hacking 2024 Hackathon Season"
-		/></a
-	>
-	<Background {transitionProgress} />
-	<Header {theme} {cycleTheme} />
-	{@render children()}
-</div>
+<a
+	id="mlh-trust-badge"
+	class="block fixed top-0 right-[50px] z-10000 w-[10%] max-w-[100px] min-w-[60px]"
+	href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"
+	target="_blank"
+	><img
+		src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-yellow.svg"
+		alt="Major League Hacking 2024 Hackathon Season"
+	/></a
+>
+<Background {transitionProgress} />
+<Header {theme} {cycleTheme} />
+{@render children()}

@@ -6,7 +6,7 @@
 	const transitionProgress = getContext('transitionProgress') as () => number;
 </script>
 
-<div class="z-4 mt-30 flex max-w-4/5 flex-col self-end sm:mt-55 sm:max-w-3/5">
+<div class="z-4 flex max-w-4/5 flex-col self-end sm:max-w-3/5">
 	<div class="w-full text-left">
 		<h1 class="font-june text-3xl text-white sm:text-5xl">Greetings From</h1>
 	</div>

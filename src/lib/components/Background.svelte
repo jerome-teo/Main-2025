@@ -4,7 +4,7 @@
 
 	let { transitionProgress } = $props();
 
-	const interpolateColor = (startColor, endColor, progress) => {
+	const interpolateColor = (startColor: string, endColor: string, progress: number) => {
 		// Parse HEX colors to RGB
 		const start = {
 			r: parseInt(startColor.slice(1, 3), 16),
@@ -35,13 +35,13 @@
 	<img
 		src={Hill_Day}
 		alt="hill"
-		class="top-hill z-2 w-full"
+		class="top-hill w-full"
 		style="opacity: {1 - transitionProgress}"
 	/>
 	<img
 		src={Hill_Night}
 		alt="hill"
-		class="top-hill z-1 w-full"
+		class="top-hill w-full"
 		style="opacity: {transitionProgress}"
 	/>
 </div>
@@ -60,7 +60,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: 0;
+		z-index: -1;
 		transition: background-color 1s ease; /* Smooth color transition */
 	}
 </style>

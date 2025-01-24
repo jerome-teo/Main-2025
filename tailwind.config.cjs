@@ -13,6 +13,12 @@ const config = {
 				},
 				indigo: {
 					DEFAULT: '#3A0B75'
+				},
+				brown : {
+					DEFAULT: '#534011'
+				},
+				paper: {
+					DEFAULT: '#FDF8E7'
 				}
 			},
 
