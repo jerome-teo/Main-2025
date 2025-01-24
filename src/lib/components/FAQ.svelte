@@ -33,10 +33,10 @@
 	let messagebox = "can't wait to go :>";
 </script>
 
-<div>
+<div id="faq-div" class="w-full">
 	<h1
 		class="w-full"
-		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; top:322%; font-size: 5vw; font-weight: bolder;"
+		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; font-size: 5vw; font-weight: bolder;"
 	>
 		Frequently Asked Questions
 	</h1>
@@ -55,7 +55,7 @@
 				<div class="w-1/3">
 					<p class="category">QH PASSPORT</p>
 				</div>
-				<div class="w-1/3 details">
+				<div class="details w-1/3">
 					{#each details as item}
 						<div class="detail-item">
 							<p class="category">{item.category.toUpperCase()}</p>
@@ -78,6 +78,10 @@
 </div>
 
 <style lang="scss">
+	#faq-div {
+		display: block;
+		margin: 0 auto;
+	}
 	h2,
 	h1,
 	p {
@@ -86,6 +90,9 @@
 		line-height: 1.5;
 	}
 
+	h1 {
+		padding-bottom: 200px;
+	}
 	// @media (max-width: 500px) {
 	// 	h1 {
 	// 		font-size: 1.5rem;
@@ -119,8 +126,9 @@
 	}
 	// }
 	.passport {
-		position: absolute;
-		top: 340%;
+		position: relative;
+		// top: 340%;
+		margin-top: 8vw;
 		left: 20%;
 		width: 60%;
 		height: auto;
