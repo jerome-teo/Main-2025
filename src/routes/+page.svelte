@@ -7,6 +7,8 @@
 </script>
 
 <Hero />
-<Info />
-<FAQ />
-<Tracks />
+<div style="margin-top: 0vw;">
+    <Info />
+    <Tracks />
+    <FAQ />
+</div>

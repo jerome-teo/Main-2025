@@ -36,11 +36,11 @@
 
 <style>
 	#tracks-div {
-		position: absolute;
-		top: 220vh;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 10;
+		position: relative;
+		margin: 0 auto;
+		margin-top: 5vw;
+		padding: 10vh 0vh;
+		z-index: 20;
 		text-align: center;
 		width: 90%;
 		max-width: 1200px;
@@ -51,7 +51,7 @@
 		font-weight: extrabold;
 		color: #EB68AF;
 		margin-bottom: 2rem;
-		font-size: 32px;
+		font-size: 5vw;
 	}
 
 	.track-div {
@@ -93,10 +93,10 @@
 		transform: rotate(-7.05deg);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-aspect-ratio: 8/5) {
 		.track-div {
 			flex-direction: column;
-			width: 90%;
+			width: 65vw;
 		}
 
 		.track-div img {

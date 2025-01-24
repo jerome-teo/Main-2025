@@ -37,10 +37,10 @@
 	let messagebox = "can't wait to go :>";
 </script>
 
-<div>
+<div id="faq-div">
 	<h1
 		class="w-full"
-		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; top:322%; font-size: 5vw; font-weight: bolder;"
+		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; font-size: 5vw; font-weight: bolder;"
 	>
 		Frequently Asked Questions
 	</h1>
@@ -82,6 +82,10 @@
 </div>
 
 <style lang="scss">
+	#faq-div {
+		display: block;
+		margin: 0 auto;
+	}
 	h2,
 	h1,
 	p {
@@ -124,7 +128,8 @@
 	// }
 	.passport {
 		position: absolute;
-		top: 340%;
+		// top: 340%;
+		margin-top: 8vw;
 		left: 20%;
 		width: 60%;
 		height: auto;
