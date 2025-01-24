@@ -140,7 +140,7 @@
 			height: auto;
 			left: 50%;
 			transform: translateX(-50%) rotate(var(--tilt));
-			top: 46vh;
+			top: 70vh;
 		}
 		#about-div {
 			top: 14%;
@@ -166,7 +166,7 @@
 			height: auto;
 			left: 50%;
 			transform: translateX(-50%) rotate(var(--tilt));
-			top: 83vh;
+			top: 110vh;
 		}
 		#different-div {
 			width: 385px;
