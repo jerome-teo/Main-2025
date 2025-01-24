@@ -97,7 +97,7 @@ export function createDayNightTimer() {
 
 	// Reactive variables
 	let currentTime = getPSTTime();
-	let transitionProgress = 0; // 0 = fully day, 1 = fully night
+	let transitionProgress = $state(0); // 0 = fully day, 1 = fully night
 
 	const updateTransition = () => {
 		const hours = currentTime.getHours(); // PST hours

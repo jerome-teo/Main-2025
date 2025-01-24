@@ -57,7 +57,7 @@
 		debounce,
 		generateUUID,
 		getRotation
-	} from '$lib/typescript/utils';
+	} from '$lib/typescript/utils.svelte';
 	import { spring, type Spring } from 'svelte/motion';
 	import { writable } from 'svelte/store';
 

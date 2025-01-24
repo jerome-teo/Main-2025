@@ -4,7 +4,7 @@
 
 	import Background from '$lib/components/Background.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import { createDayNightTimer } from '$lib/typescript/utils';
+	import { createDayNightTimer } from '$lib/typescript/utils.svelte';
 	import { setContext } from 'svelte';
 
 	let { children } = $props();
