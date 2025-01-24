@@ -86,3 +86,51 @@ export function debounce<T extends (...args: unknown[]) => void>(
 		}
 	};
 }
+
+export function createDayNightTimer() {
+	const getPSTTime = () => {
+		const now = new Date();
+		const utcTime = now.getTime() + now.getTimezoneOffset() * 60000;
+		const pstOffset = -8 * 60 * 60000; // PST offset in milliseconds
+		return new Date(utcTime + pstOffset);
+	};
+
+	// Reactive variables
+	let currentTime = getPSTTime();
+	let transitionProgress = 0; // 0 = fully day, 1 = fully night
+
+	const updateTransition = () => {
+		const hours = currentTime.getHours(); // PST hours
+		const minutes = currentTime.getMinutes(); // PST minutes
+
+		if (hours === 17) {
+			// Transition from light to dark (5 PM to 6 PM)
+			transitionProgress = minutes / 60; // Progress from 0 to 1
+		} else if (hours === 8) {
+			// Transition from dark to light (8 AM to 9 AM)
+			transitionProgress = 1 - minutes / 60; // Progress from 1 to 0
+		} else if (hours > 17 || hours < 8) {
+			// Fully night (after 6 PM until 8 AM)
+			transitionProgress = 1;
+		} else {
+			// Fully day (after 9 AM until 5 PM)
+			transitionProgress = 0;
+		}
+
+		// console.log(`Transition Progress: ${transitionProgress}`);
+	};
+
+	// Update every minute
+	setInterval(() => {
+		currentTime = getPSTTime(); // Recalculate PST time
+		updateTransition(); // Update transition progress
+	}, 60000);
+
+	// Initial calculation
+	updateTransition();
+	return {
+		get transitionProgress() {
+			return transitionProgress;
+		}
+	};
+}
