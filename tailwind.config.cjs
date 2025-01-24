@@ -19,7 +19,8 @@ const config = {
 			fontFamily: {
 				etna: ['Etna', 'serif'],
 				fugaz: ['Fugaz One', 'sans'],
-				jetbrains: ['JetBrainsMono', 'mono']
+				jetbrains: ['JetBrainsMono', 'mono'],
+				june: ['JuneExptCurious', 'serif']
 			}
 		}
 	},
