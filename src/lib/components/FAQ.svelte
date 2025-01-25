@@ -64,7 +64,7 @@
 			</div>
 			<div class="w-3/7 pt-[7%]">
 				<p class="qh-passport">QWERHacks Passport</p>
-				<p class="category">TIME:</p>
+				<p class="category mt-[20%]">TIME:</p>
 				<p class="detail">Feb 1-2</p>
 				<div class="w-full h-full relative">
 					<ButtonBase class="absolute right-[13%] top-[41%] rounded-[2em] bg-[#f94a9c] size-max">
@@ -89,9 +89,6 @@
 	}
 	.category {
 		font-size: 1.2vw;
-
-		margin-top: 20%;
-		// font-weight: bold;
 	}
 	.qh-passport {
 		font-size: 2vw;
