@@ -4,7 +4,7 @@
 
 	import Background from '$lib/components/Background.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import { createDayNightTimer } from '$lib/typescript/utils.svelte';
+	import { createDayNightTimer, interpolateColor } from '$lib/typescript/utils.svelte';
 	import { setContext } from 'svelte';
 
 	let { children } = $props();
@@ -19,6 +19,10 @@
 		if (theme === 2) theme = 0;
 		else theme += 1;
 	}
+
+	$effect(() => {
+		document.documentElement.style.setProperty("background-color", interpolateColor('#0F5E08', '#75761F', transitionProgress));
+	});
 </script>
 
 <a
@@ -34,3 +38,9 @@
 <Background {transitionProgress} />
 <Header {theme} {cycleTheme} />
 {@render children()}
+
+<style lang="scss">
+	:root {
+		transition: background-color 1s ease;
+	}
+</style>

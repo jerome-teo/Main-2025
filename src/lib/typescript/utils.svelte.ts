@@ -134,3 +134,25 @@ export function createDayNightTimer() {
 		}
 	};
 }
+
+export function interpolateColor(startColor: string, endColor: string, progress: number) {
+	// Parse HEX colors to RGB
+	const start = {
+		r: parseInt(startColor.slice(1, 3), 16),
+		g: parseInt(startColor.slice(3, 5), 16),
+		b: parseInt(startColor.slice(5, 7), 16)
+	};
+	const end = {
+		r: parseInt(endColor.slice(1, 3), 16),
+		g: parseInt(endColor.slice(3, 5), 16),
+		b: parseInt(endColor.slice(5, 7), 16)
+	};
+
+	// Interpolate each channel
+	const r = Math.round(start.r + (end.r - start.r) * progress);
+	const g = Math.round(start.g + (end.g - start.g) * progress);
+	const b = Math.round(start.b + (end.b - start.b) * progress);
+
+	// Return the interpolated color in HEX format
+	return `rgb(${r}, ${g}, ${b})`;
+}
