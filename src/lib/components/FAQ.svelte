@@ -35,9 +35,9 @@
 	let messagebox = "can't wait to go :>";
 </script>
 
-<section use:scrollRef={"faq"} class="w-full flex flex-col items-center">
+<section use:scrollRef={"faq"} class="w-full flex flex-col items-center mt-[5rem]">
 	<h1
-		class="w-full text-center text-[#EB68AF] z-12 text-[6vw] sm:text-5xl font-bold"
+		class="w-full text-center text-fuchsia z-12 text-[6vw] sm:text-5xl font-extrabold"
 	>
 		Frequently Asked Questions
 	</h1>
@@ -66,7 +66,7 @@
 				<p class="category mt-[20%]">TIME:</p>
 				<p class="detail">Feb 1-2</p>
 				<div class="w-full h-full relative">
-					<ButtonBase class="absolute right-[13%] top-[41%] rounded-[2em] bg-[#f94a9c] size-max">
+					<ButtonBase class="absolute right-[13%] top-[41%] rounded-[2em] bg-fuchsia size-max">
 						<a class="text-[120%]" href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
 					</ButtonBase>
 				</div>

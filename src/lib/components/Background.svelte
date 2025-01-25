@@ -35,7 +35,8 @@
 	.full-background {
 		// background-color: #92ceff; /* Set background to #92ceff */
 		display: grid;
-		height: 100vh;
+		height: 100%;
+		width: 100%;
 		position: absolute;
 		top: 0;
 		transition: background-color 1s ease; /* Smooth color transition */

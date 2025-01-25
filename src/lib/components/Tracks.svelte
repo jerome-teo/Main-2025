@@ -6,7 +6,7 @@
 </script>
 
 <section use:scrollRef={"tracks"} id="tracks-div">
-	<h3 id="tracks-title" class="font-extrabold">Tracks</h3>
+	<h3 id="tracks-title" class="font-extrabold text-fuchsia text-[6vw] sm:text-5xl">Tracks</h3>
 	<div class="track-div">
 		<img src={SustainTrack} alt="Sustain Track" id="sustain-image" class="track-image">
 		<p>
@@ -39,8 +39,7 @@
 	#tracks-div {
 		position: relative;
 		margin: 0 auto;
-		margin-top: 5vw;
-		padding: 10vh 0vh;
+		margin-top: 5rem;
 		z-index: 20;
 		text-align: center;
 		width: 90%;
@@ -48,11 +47,7 @@
 	}
 
 	#tracks-title {
-		font-family: 'Etna';
-		font-weight: extrabold;
-		color: #EB68AF;
 		margin-bottom: 2rem;
-		font-size: 5vw;
 	}
 
 	.track-div {

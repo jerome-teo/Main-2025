@@ -26,7 +26,7 @@
 	<ButtonBase>
 		<button onclick={() => scrollTop()}>Sponsors</button>
 	</ButtonBase>
-	<ButtonBase class="mx-3 rounded-3xl bg-[#f94a9c]">
+	<ButtonBase class="mx-3 rounded-3xl bg-fuchsia">
 		<a href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
 	</ButtonBase>
 	<ButtonBase>

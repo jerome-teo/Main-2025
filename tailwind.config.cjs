@@ -22,6 +22,9 @@ const config = {
 				},
 				lightblue: {
 					DEFAULT: '#4162BF'
+				},
+				fuchsia: {
+					DEFAULT: '#EB68AF'
 				}
 			},
 
