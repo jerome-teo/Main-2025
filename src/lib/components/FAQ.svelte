@@ -2,6 +2,7 @@
 	import Passport from '$lib/media/Passport.svg';
 	import { scrollRef } from 'svelte-scrolling';
 	import ApplyNowButton from './ApplyNowButton.svelte';
+	import ButtonBase from './utils/ButtonBase.svelte';
 
 	let faqs = [
 		{
@@ -34,44 +35,41 @@
 	let messagebox = "can't wait to go :>";
 </script>
 
-<section use:scrollRef={"faq"} id="faq-div" class="w-full">
+<section use:scrollRef={"faq"} class="w-full flex flex-col items-center">
 	<h1
 		class="w-full"
-		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; font-size: 5vw; font-weight: bolder;"
+		style="text-align: center; color:#EB68AF; z-index: 12; font-size: 5vw; font-weight: bolder;"
 	>
 		Frequently Asked Questions
 	</h1>
-	<div class="passport">
-		<img src={Passport} class="passport-bg" alt="QWERHacks Passport" />
+	<div class="passport flex flex-col aspect-1315/1500 overflow-hidden text-[#4162bf]">
+		<!-- <img src={Passport} class="passport-bg" alt="QWERHacks Passport" /> -->
 
-		<div class="faq-section h-1/2">
+		<div class="h-1/2 p-[5%]">
 			{#each faqs as faq}
-				<p class="category">{faq.question}</p>
-				<p class="detail">{@html faq.answer}</p>
+				<p class="font-bold">{faq.question}</p>
+				<p>{@html faq.answer}</p>
 			{/each}
 		</div>
 
-		<div class="details-section h-1/2">
-			<div class="flex flex-row">
-				<div class="w-1/3">
-					<p class="category">QH PASSPORT</p>
-				</div>
-				<div class="details w-1/3">
-					{#each details as item}
-						<div class="detail-item">
-							<p class="category">{item.category.toUpperCase()}</p>
-							<p class="detail">{@html item.detail}</p>
-						</div>
-					{/each}
-				</div>
-				<div class="w-1/2">
-					<p class="qh-passport">QWERHacks Passport</p>
-					<br />
-					<p class="category">TIME:</p>
-					<p class="detail">Feb 1-2</p>
-					<div class="apply-now-btn-div">
-						<ApplyNowButton link="https://tinyurl.com/qwerhacks25"></ApplyNowButton>
+		<div class="details-section h-1/2 flex flex-row">
+			<p class="w-2/7 pl-[13%] pt-[7%] category">QH PASSPORT</p>
+			<div class="w-2/7 p-[7%]">
+				{#each details as item}
+					<div class="detail-item">
+						<p class="category">{item.category.toUpperCase()}</p>
+						<p class="detail">{@html item.detail}</p>
 					</div>
+				{/each}
+			</div>
+			<div class="w-3/7 pt-[7%]">
+				<p class="qh-passport">QWERHacks Passport</p>
+				<p class="category">TIME:</p>
+				<p class="detail">Feb 1-2</p>
+				<div class="w-full h-full relative">
+					<ButtonBase class="absolute right-[13%] top-[41%] rounded-[2em] bg-[#f94a9c] size-max">
+						<a class="text-[3vw]" href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
+					</ButtonBase>
 				</div>
 			</div>
 		</div>
@@ -79,46 +77,20 @@
 </section>
 
 <style lang="scss">
-	#faq-div {
-		display: block;
-		margin: 0 auto;
-	}
-	h2,
-	h1,
 	p {
-		color: #4162bf;
-		font-family: Etna;
 		line-height: 1.5;
-	}
-
-	h1 {
-		padding-bottom: 200px;
-	}
-	// @media (max-width: 500px) {
-	// 	h1 {
-	// 		font-size: 1.5rem;
-	// 	}
-	// 	p {
-	// 		font-size: 0.4rem;
-	// 	}
-	// 	.qh-passport .category .detail {
-	// 		font-size: 2px;
-	// 	}
-	// }
-	.details {
-		gap: 1px;
+		font-size: 2vw;
 	}
 
 	// @media (min-width: 500px) {
 	.detail {
 		font-size: 1.4vw;
 		font-weight: bold;
-		margin-bottom: 3%;
 	}
 	.category {
 		font-size: 1.2vw;
 
-		margin-bottom: 0;
+		margin-top: 20%;
 		// font-weight: bold;
 	}
 	.qh-passport {
@@ -127,39 +99,11 @@
 	}
 	// }
 	.passport {
-		position: relative;
 		// top: 340%;
 		margin-top: 8vw;
-		left: 20%;
-		width: 60%;
-		height: auto;
+		max-width: 80%;
 		z-index: 11;
-	}
-
-	.passport-bg {
-		width: 100%;
-	}
-
-	.faq-section {
-		position: absolute;
-		top: 5%;
-		left: 10%;
-		width: 80%;
-		font-family: 'Georgia', serif;
-		font-size: 18px;
-		color: #1e1e1e;
-	}
-
-	.details-section {
-		position: absolute;
-		top: 55%;
-		left: 10%;
-		width: 80%;
-	}
-
-	.apply-now-btn-div {
-		position: absolute;
-		bottom: 16%;
-		right: -5%;
+		background: url('/src/lib/media/Passport.svg') no-repeat center center;
+		background-size: contain;
 	}
 </style>

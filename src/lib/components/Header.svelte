@@ -15,13 +15,13 @@
 		<button onclick={() => scrollTop()}>Home</button>
 	</ButtonBase>
 	<ButtonBase>
-		<a use:scrollTo={"about"}>About</a>
+		<button use:scrollTo={"about"}>About</button>
 	</ButtonBase>
 	<ButtonBase>
-		<a use:scrollTo={"tracks"}>Tracks</a>
+		<button use:scrollTo={"tracks"}>Tracks</button>
 	</ButtonBase>
 	<ButtonBase>
-		<a use:scrollTo={"faq"}>FAQ</a>
+		<button use:scrollTo={"faq"}>FAQ</button>
 	</ButtonBase>
 	<ButtonBase>
 		<button onclick={() => scrollTop()}>Sponsors</button>

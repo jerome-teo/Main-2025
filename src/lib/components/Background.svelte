@@ -26,19 +26,18 @@
 
 <style lang="scss">
 	.top-hill {
-		position: absolute;
-		top: 5rem;
+		margin-top: 5rem;
 		transition: opacity 1s ease;
+		grid-column: 1;
+		grid-row: 1;
 	}
 
 	.full-background {
 		// background-color: #92ceff; /* Set background to #92ceff */
-		width: 100%;
-		min-height: 100vh;
+		display: grid;
+		height: 100vh;
 		position: absolute;
 		top: 0;
-		left: 0;
-		z-index: -1;
 		transition: background-color 1s ease; /* Smooth color transition */
 	}
 </style>

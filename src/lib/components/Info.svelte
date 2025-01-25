@@ -4,7 +4,7 @@
 	import { scrollRef } from 'svelte-scrolling';
 </script>
 
-<section use:scrollRef={"about"} class="flex flex-col items-center text-brown">
+<section use:scrollRef={"about"} class="flex flex-col items-center text-brown z-1">
 	<div class="postcard rotate-4">
 		<img src={About} alt="Postcard background" />
 		<div class="flex flex-row aspect-1207/714">

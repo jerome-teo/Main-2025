@@ -31,10 +31,10 @@ Note that user-defined html classes are not global and won't work properly, use 
 		:global(button) {
 			display: block;
 			text-wrap: nowrap;
-			padding-left: 1rem;
-			padding-right: 1rem;
-			padding-top: 0.45rem;
-			padding-bottom: 0.375rem;
+			padding-left: 0.8em;
+			padding-right: 0.8em;
+			padding-top: 0.36em;
+			padding-bottom: 0.3em;
 		}
 	}
 </style>
