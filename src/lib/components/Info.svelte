@@ -1,183 +1,124 @@
 <script lang="ts">
-	import Postcard from './Postcard.svelte';
-	import ApplyNowButton from './ApplyNowButton.svelte';
 	import About from '$lib/media/About_Postcard.svg';
 	import UCLA from '$lib/media/UCLA_Postcard.svg';
+	import { scrollRef } from 'svelte-scrolling';
 </script>
 
-<div>
-	<Postcard backgroundImage={About} width="630px" height="356px" tilt={4.5} id="about-postcard">
-		<div id="about-div">
-			<p class="about-header">About:</p>
-			<p id="about-text">
-				QWER Hacks is here to bring LGBTQIA+ individuals and allies together to uplift marginalized
-				communities. At our hackathon, we celebrate authenticity, promote inclusivity, and enable
-				everyone to grow together.
-			</p>
-		</div>
+<section use:scrollRef={"about"} class="flex flex-col items-center text-brown">
+	<div class="postcard rotate-4">
+		<img src={About} alt="Postcard background" />
+		<div class="flex flex-row aspect-1207/714">
+			<div class="w-1/2 pl-[3.5vw] pr-[3vw] pt-[5vw] md:p-10">
+				<h1>About:</h1>
+				<p class="about">
+					QWER Hacks is here to bring LGBTQIA+ individuals and allies together to uplift marginalized
+					communities. At our hackathon, we celebrate authenticity, promote inclusivity, and enable
+					everyone to grow together.
+				</p>
+			</div>
 
-		<div id="address-div">
-			<p id="address-text">
+			<p class="address">
 				Feb 1-2, 2025 at UCLA <br />
 				405 Hilgard Ave <br />
 				Los Angeles, CA 90095 <br />
 				United States
 			</p>
 		</div>
-	</Postcard>
-	<Postcard backgroundImage={UCLA} width="707px" height="745px" tilt={-3} id="ucla-postcard">
-		<div id="different-div">
-			<p class="subtitle">We’re not like other hackathons...</p>
-			<p>
-				We are here to support your journey – we want you to thrive, grow, share your passions, and
-				make something great
-			</p>
-			<p>
-				So what's that mean?<br />
-				This year, we want you to, learn to find real, impactful issues, make things to help your community
-				& spread joy, and find new pals and pride in your identity
-			</p>
+	</div>
+	<div class="postcard -rotate-3">
+		<img src={UCLA} alt="Postcard background" />
+		<div class="flex flex-col items-center">
+			<div class="text-lightblue mt-[52%] p-[8%]">
+				<p class="subtitle font-bold">We’re not like other hackathons...</p>
+				<p>
+					We are here to support your journey – we want you to thrive, grow, share your passions, and
+					make something great!
+				</p>
+				<p>
+					So what's that mean?
+				</p>
+				<p>
+					This year, we want you to, learn to find real, impactful issues, make things to help your community
+					& spread joy, and find new pals and pride in your identity!
+				</p>
+			</div>
 		</div>
+	</div>
+</section>
 
-		<div id="apply-now-btn-div">
-			<ApplyNowButton link="https://tinyurl.com/qwerhacks25" />
-		</div>
-	</Postcard>
-</div>
+<style lang="scss">
+	.postcard {
+		display: grid;
+		max-width: 100%;
+		overflow: hidden;
+		width: 700px;
 
-<style>
-	:global(body) {
-		overflow-x: hidden;
-		width: 100vw;
-	}
-	:global(#about-postcard),
-	:global(#ucla-postcard) {
-		/* position: absolute; */
-		left: 50%;
-		transform: translateX(-50%) rotate(var(--tilt));
-		z-index: 10;
-		/* max-width: 90vw; */
-    	max-width: 100vw;
-		overflow-x: hidden;
-		
-	}
-
-	.about-header {
-		font-weight: bold;
-		color: #534011;
-		font-size: 24px;
-	}
-	#about-div {
-		width: 250px;
-		position: absolute;
-		top: 11%;
-		left: 5%;
-		display: inline-block;
-	}
-	#about-text {
-		line-height: 2.8;
-		font-style: normal;
-		font-weight: 400;
-	}
-	#address-div {
-		width: 200px;
-		position: absolute;
-		top: 43%;
-		right: 11%;
-	}
-	#address-text {
-		line-height: 2.5;
-	}
-	#different-div {
-		width: 600px;
-		position: absolute;
-		top: 60%;
-		left: 10%;
-	}
-	#about-text,
-	#address-text {
-		color: #534011;
-	}
-	p {
-		font-size: 14px;
-	}
-	#different-div p {
-		color: #4162bf;
-		line-height: 2;
-	}
-	#different-div .subtitle {
-		font-weight: 800;
-	}
-	#apply-now-btn-div {
-		position: absolute;
-		top: 85%;
-		left: 36%;
-	}
-
-	/* Media query for smaller screens */
-	@media (max-aspect-ratio: 5/5) {
-		:global(#about-postcard) {
-			width: 400px;
-			height: auto;
-			left: 50%;
-			transform: translateX(-50%) rotate(var(--tilt));
-			/* top: 70vh; */
-		}
-		#about-div {
-			top: 14%;
-			left: 5%;
-			width: 40%;
-		}
-		#about-text {
-			line-height: 1.2;
-			font-style: normal;
-			font-weight: 400;
-		}
-		#address-div {
-			top: 44%;
-			right: 3%;
-			width: 40%;
-		}
-		#address-text {
-			line-height: 1.6;
+		* {
+			grid-row: 1;
+			grid-column: 1;
 		}
 
-		:global(#ucla-postcard) {
-			width: 450px;
-			height: auto;
-			left: 50%;
-			transform: translateX(-50%) rotate(var(--tilt));
-			/* top: 110vh; */
-		}
-		#different-div {
-			width: 400px;
-			position: absolute;
-			top: 59%;
-			left: 7%;
-		}
-		#different-div p {
-			line-height: 1;
-		}
-		#apply-now-btn-div {
-			position: absolute;
-			top: 83%;
-			left: 30%;
-		}
-
-		/* Media query for very narrow screens */
-		@media (max-aspect-ratio: 8/5) {
-			#about-div {
-				left: 10%;
-				width: 38%;
+		// Large screens
+		@media (width >= 48rem) {
+			h1 {
+				font-size: 1.875rem;
+				line-height: 1.2;
 			}
-			#about-text {
-				line-height: 1.1;
-				font-size: 13px;
+
+			p {
+				&.about {
+					font-size: 1.125rem;
+					line-height: 2.2;
+					padding-top: 20px;
+				}
+
+				&.address {
+					font-size: 1.5rem;
+        			line-height: 2.75rem;
+					padding-left: 3rem;
+					padding-top: 11rem;
+				}
+
+				margin-bottom: 1rem;
 			}
-			#different-div {
-				width: 370px;
-				left: 8%;
+
+			// Postcard div
+			margin-top: 120px;
+		}
+
+		// Small screens
+		// Use vw because postcard has already expanded to fill the entire width of the screen
+		@media (width < 48rem){
+			h1 {
+				font-size: 4vw;
 			}
+
+			p {
+				&.about {
+					padding-top: 1vw;
+					font-size: 3.5vw;
+					line-height: 4vw;
+					overflow: hidden;
+				}
+
+				&.address {
+					font-size: 3.5vw;
+					line-height: 5.5vw;
+					padding-top: 24vw;
+					padding-left: 5vw;
+				}
+
+				&.subtitle {
+					font-size: 4vw;
+				}
+
+				font-size: 3.25vw;
+				line-height: 1;
+				margin-bottom: 1.5vw;
+			}
+			
+			// Postcard div
+			margin-top: 10vw;
 		}
 	}
 </style>

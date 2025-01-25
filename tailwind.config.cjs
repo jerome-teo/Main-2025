@@ -19,6 +19,9 @@ const config = {
 				},
 				paper: {
 					DEFAULT: '#FDF8E7'
+				},
+				lightblue: {
+					DEFAULT: '#4162BF'
 				}
 			},
 
