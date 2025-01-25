@@ -37,8 +37,7 @@
 
 <section use:scrollRef={"faq"} class="w-full flex flex-col items-center">
 	<h1
-		class="w-full"
-		style="text-align: center; color:#EB68AF; z-index: 12; font-size: 5vw; font-weight: bolder;"
+		class="w-full text-center text-[#EB68AF] z-12 text-[6vw] sm:text-5xl font-bold"
 	>
 		Frequently Asked Questions
 	</h1>
@@ -53,7 +52,7 @@
 		</div>
 
 		<div class="details-section h-1/2 flex flex-row">
-			<p class="w-2/7 pl-[13%] pt-[7%] category">QH PASSPORT</p>
+			<p class="w-2/7 pl-[13%] sm:pl-[11.5%] pt-[7%] category">QH PASSPORT</p>
 			<div class="w-2/7 p-[7%]">
 				{#each details as item}
 					<div class="detail-item">
@@ -68,7 +67,7 @@
 				<p class="detail">Feb 1-2</p>
 				<div class="w-full h-full relative">
 					<ButtonBase class="absolute right-[13%] top-[41%] rounded-[2em] bg-[#f94a9c] size-max">
-						<a class="text-[3vw]" href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
+						<a class="text-[120%]" href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
 					</ButtonBase>
 				</div>
 			</div>
@@ -77,30 +76,59 @@
 </section>
 
 <style lang="scss">
-	p {
-		line-height: 1.5;
-		font-size: 2vw;
-	}
-
-	// @media (min-width: 500px) {
-	.detail {
-		font-size: 1.4vw;
-		font-weight: bold;
-	}
-	.category {
-		font-size: 1.2vw;
-	}
-	.qh-passport {
-		font-size: 2vw;
-		font-weight: bolder;
-	}
-	// }
 	.passport {
 		// top: 340%;
-		margin-top: 8vw;
+		margin-top: 5rem;
 		max-width: 80%;
+		width: 600px;
 		z-index: 11;
 		background: url('/src/lib/media/Passport.svg') no-repeat center center;
 		background-size: contain;
+
+		p {
+			line-height: 1.2;
+			font-size: 87%;
+		}
+
+		.detail {
+			font-size: 70%;
+			font-weight: bold;
+		}
+
+		.category {
+			font-size: 65%;
+		}
+
+		.qh-passport {
+			font-size: 102%;
+			font-weight: bolder;
+		}
+
+		@media (width < 48rem) {
+			margin-top: 8vw;
+
+			p {
+				font-size: 2vw;
+				line-height: 1.5;
+			}
+			
+			.detail {
+				font-size: 1.4vw;
+				font-weight: bold;
+			}
+
+			.category {
+				font-size: 1.2vw;
+			}
+
+			.qh-passport {
+				font-size: 2vw;
+				font-weight: bolder;
+			}
+
+			:global(a) {
+				font-size: 3vw;
+			}
+		}
 	}
 </style>
