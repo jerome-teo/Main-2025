@@ -2,9 +2,10 @@
 	import AdventureTrack from '$lib/media/AdventureTrack.svg';
 	import CelebrateTrack from '$lib/media/CelebrateTrack.svg';
 	import SustainTrack from '$lib/media/SustainTrack.svg';
+	import { scrollRef } from 'svelte-scrolling';
 </script>
 
-<div id="tracks-div">
+<section use:scrollRef={"tracks"} id="tracks-div">
 	<h3 id="tracks-title" class="font-extrabold">Tracks</h3>
 	<div class="track-div">
 		<img src={SustainTrack} alt="Sustain Track" id="sustain-image" class="track-image">
@@ -32,7 +33,7 @@
 			of the community and spaces that bring joy.
 		</p>
 	</div>
-</div>
+</section>
 
 <style>
 	#tracks-div {

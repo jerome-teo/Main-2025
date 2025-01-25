@@ -15,19 +15,19 @@
 		<button onclick={() => scrollTop()}>Home</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button onclick={() => scrollTop()}>About</button>
+		<a use:scrollTo={"about"}>About</a>
 	</ButtonBase>
 	<ButtonBase>
-		<button onclick={() => scrollTop()}>Tracks</button>
+		<a use:scrollTo={"tracks"}>Tracks</a>
 	</ButtonBase>
 	<ButtonBase>
-		<button onclick={() => scrollTop()}>FAQ</button>
+		<a use:scrollTo={"faq"}>FAQ</a>
 	</ButtonBase>
 	<ButtonBase>
 		<button onclick={() => scrollTop()}>Sponsors</button>
 	</ButtonBase>
 	<ButtonBase class="mx-3 rounded-3xl bg-[#f94a9c]">
-		<a href="https://tinyurl.com/qwerhacks25">Apply Now!</a>
+		<a href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
 	</ButtonBase>
 	<ButtonBase>
 		<button class="mt-1.5 cursor-pointer text-[2rem]" onclick={cycleTheme}>
@@ -54,19 +54,18 @@
 			<img class="w-full" src={Menu} alt="menu" />
 		</button>
 	</ButtonBase>
-	<div role="navigation" class="ms-2 hidden flex-row items-center md:flex">
+	<nav class="ms-2 hidden flex-row items-center md:flex">
 		{@render menu()}
-	</div>
+	</nav>
 	{#if showMenu}
-		<div
+		<nav
 			bind:this={menuDiv}
 			in:slide
 			out:slide
-			role="menu"
 			class="flex flex-col rounded-b-3xl border-3 border-t-0 text-brown border-brown bg-paper md:hidden"
 		>
 			{@render menu()}
-		</div>
+		</nav>
 	{/if}
 </div>
 

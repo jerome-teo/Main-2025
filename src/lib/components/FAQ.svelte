@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Passport from '$lib/media/Passport.svg';
+	import { scrollRef } from 'svelte-scrolling';
 	import ApplyNowButton from './ApplyNowButton.svelte';
 
 	let faqs = [
@@ -33,7 +34,7 @@
 	let messagebox = "can't wait to go :>";
 </script>
 
-<div id="faq-div" class="w-full">
+<section use:scrollRef={"faq"} id="faq-div" class="w-full">
 	<h1
 		class="w-full"
 		style="text-align: center; color:#EB68AF; z-index: 12; position: absolute; font-size: 5vw; font-weight: bolder;"
@@ -75,7 +76,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 <style lang="scss">
 	#faq-div {
