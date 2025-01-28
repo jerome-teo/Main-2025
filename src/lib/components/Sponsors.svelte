@@ -4,6 +4,10 @@
 	import SustainTrack from '$lib/media/SustainTrack.svg';
 	import { scrollRef } from 'svelte-scrolling';
 	import StandOut from '$lib/media/stand-out-stickers-logo.svg';
+	import L3 from '$lib/media/L3Harris.svg';
+	import Boeing from '$lib/media/Boeing.svg';
+	import Northrop from '$lib/media/Northrop.svg';
+	import PPG from '$lib/media/PPG.svg';
 </script>
 
 <section use:scrollRef={'sponsors'} id="" class="mt-[5rem] flex w-full flex-col items-center">
@@ -11,9 +15,34 @@
 		Sponsors
 	</h1>
 	<div
-		class="flex w-1/2 items-center justify-center object-center"
-		style="width: 300px; overflow: visible;"
+		class="flex w-1/2 flex-col items-center justify-center object-center pt-12"
+		style="width: 600px; overflow: visible;"
 	>
+		<div
+			class="absolute rounded-lg bg-white"
+			style="width: 340px; height: 1200px; z-index: 1; opacity: 0.2; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);"
+		></div>
+		<!-- </div> -->
+		<img
+			src={Northrop}
+			alt=""
+			id="standout"
+			class="aspect-square w-full"
+			style="width:300px; overflow: visible; z-index: 12;"
+		/><img
+			src={L3}
+			alt=""
+			id="standout"
+			class="aspect-square w-full"
+			style="width:300px; overflow: visible; z-index: 12;"
+		/>
+		<img
+			src={PPG}
+			alt=""
+			id="standout"
+			class="aspect-square w-full"
+			style="width:300px; overflow: visible; z-index: 12;"
+		/>
 		<img
 			src={StandOut}
 			alt=""
@@ -21,7 +50,6 @@
 			class="aspect-square w-full"
 			style="width:300px; overflow: visible; z-index: 12;"
 		/>
-		<!-- </div> -->
 	</div>
 </section>
 
