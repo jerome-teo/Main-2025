@@ -15,8 +15,8 @@
 		Sponsors
 	</h1>
 	<div
-		class="flex w-1/2 flex-col items-center justify-center object-center pt-12"
-		style="width: 600px; overflow: visible;"
+		class="flex w-1/2 flex-col items-center justify-center object-center pt-12 pb-12"
+		style="width: 300px; overflow: visible;"
 	>
 		<div
 			class="absolute rounded-lg bg-white"
