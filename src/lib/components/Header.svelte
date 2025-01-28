@@ -15,18 +15,18 @@
 		<button onclick={() => scrollTop()}>Home</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button use:scrollTo={"about"}>About</button>
+		<button use:scrollTo={'about'}>About</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button use:scrollTo={"tracks"}>Tracks</button>
+		<button use:scrollTo={'tracks'}>Tracks</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button use:scrollTo={"faq"}>FAQ</button>
+		<button use:scrollTo={'faq'}>FAQ</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button onclick={() => scrollTop()}>Sponsors</button>
+		<button use:scrollTo={'sponsors'}>Sponsors</button>
 	</ButtonBase>
-	<ButtonBase class="mx-3 rounded-3xl bg-fuchsia">
+	<ButtonBase class="bg-fuchsia mx-3 rounded-3xl">
 		<a href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
 	</ButtonBase>
 	<ButtonBase>
@@ -62,7 +62,7 @@
 			bind:this={menuDiv}
 			in:slide
 			out:slide
-			class="flex flex-col rounded-b-3xl border-3 border-t-0 text-brown border-brown bg-paper md:hidden"
+			class="text-brown border-brown bg-paper flex flex-col rounded-b-3xl border-3 border-t-0 md:hidden"
 		>
 			{@render menu()}
 		</nav>
