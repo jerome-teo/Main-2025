@@ -104,6 +104,19 @@
 		}
 	}
 
+	function handleTap(event: MouseEvent) {
+		const rect = containerRef.getBoundingClientRect();
+		const clickX = event.clientX - rect.left; // Click position relative to container
+		const middle = rect.width / 2;
+
+		if (clickX < middle * 0.8) {
+			prev(); // Clicked on left side
+		} else if (clickX > middle * 1.2) {
+			next(); // Clicked on right side
+		}
+	}
+
+
 	onMount(() => {
 		isBrowser = true;
 		if (isBrowser) {
@@ -130,7 +143,9 @@
 	ontouchmove={handleDragMove}
 	ontouchend={handleDragEnd}
 	onmouseenter={stopAutoplay}
+	onclick={handleTap}
 >
+
 	<div class="carousel-items">
 		{#each items as { image, position }, i}
 			<div class="carousel-item {position}">
@@ -163,7 +178,7 @@
 		left: 50%;
 		width: 300px;
 		height: 200px;
-		transition: all 0.5s ease-out;
+		transition: all 0.5s ease;
 		pointer-events: none; /* Prevent images from interfering with drag */
 	}
 
