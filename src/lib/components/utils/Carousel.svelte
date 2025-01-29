@@ -105,6 +105,8 @@
 	}
 
 	function handleTap(event: MouseEvent) {
+		if (event.target !== containerRef)
+			return;
 		const rect = containerRef.getBoundingClientRect();
 		const clickX = event.clientX - rect.left; // Click position relative to container
 		const middle = rect.width / 2;
@@ -170,6 +172,7 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
+		pointer-events: none;
 	}
 
 	.carousel-item {
