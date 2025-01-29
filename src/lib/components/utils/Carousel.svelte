@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import { spring } from 'svelte/motion';
 
 	let { images = [], autoplayInterval = 3000 } = $props();
 
@@ -8,10 +7,9 @@
 	let extendedImages = [...images, ...images, ...images];
 
 	let currentIndex = $state(0); // Start from the middle set of images
-	let containerRef;
-	let intervalId = $state<number | null>(null);
-	let isBrowser = $state(false);
-	let isDragging = $state(false);
+	let containerRef: HTMLElement | null;
+	let intervalId: number | null = null;
+	let isDragging = false;
 	let startX = 0;
 	let currentX = 0;
 
@@ -42,7 +40,7 @@
 		})
 	);
 
-	function handleDragStart(event: MouseEvent | TouchEvent) {
+	function handleMouseDown(event: MouseEvent | TouchEvent) {
 		isDragging = true;
 		startX = 'touches' in event ? event.touches[0].clientX : event.clientX;
 		currentX = startX;
@@ -54,32 +52,63 @@
 		}
 	}
 
-	function handleDragMove(event: MouseEvent | TouchEvent) {
+	function handleMouseMove(event: MouseEvent | TouchEvent) {
 		if (!isDragging) return;
 
-		event.preventDefault();
+		if (event instanceof MouseEvent)
+			event.preventDefault();
 		currentX = 'touches' in event ? event.touches[0].clientX : event.clientX;
 		const diff = currentX - startX;
 
-		if (Math.abs(diff) > 50) {
+		if (Math.abs(diff) > 120) {
 			if (diff > 0) {
 				prev();
 			} else {
 				next();
 			}
-			handleDragEnd();
+			startX = currentX;
 		}
 	}
 
-	function handleDragEnd() {
+	function handleMouseUp(event: MouseEvent | TouchEvent) {
 		isDragging = false;
-
+		
 		// Remove the dragging class to re-enable transitions
 		if (containerRef) {
 			containerRef.classList.remove('dragging');
 		}
+		
+		if (event instanceof TouchEvent) {
+			startAutoplay();
+			currentX = event.changedTouches[0].clientX;
+		} else {
+			currentX = event.clientX;
+		}
+	
+		const diff = currentX - startX;
 
-		startAutoplay();
+		// If the mouse has moved, do nothing
+		if (Math.abs(diff) !== 0) return;
+
+		// Else this is a click
+		if (event.target !== containerRef || !containerRef)
+			return;
+		if (event instanceof TouchEvent)
+			event.preventDefault();
+		const rect = containerRef.getBoundingClientRect();
+		const clickX = currentX - rect.left; // Click position relative to container
+		const middle = rect.width / 2;
+
+		if (clickX < middle * 0.8) {
+			prev(); // Clicked on left side
+		} else if (clickX > middle * 1.2) {
+			next(); // Clicked on right side
+		}
+	}
+
+	function handleMouseLeave() {
+		if (!isDragging)
+			startAutoplay();
 	}
 
 	function next() {
@@ -91,61 +120,34 @@
 	}
 
 	function startAutoplay() {
-		if (!isBrowser) return;
-		stopAutoplay();
-		intervalId = setInterval(next, autoplayInterval);
+		if (intervalId === null) {
+			intervalId = setInterval(next, autoplayInterval);
+		}
 	}
 
 	function stopAutoplay() {
-		if (!isBrowser) return;
 		if (intervalId !== null) {
 			clearInterval(intervalId);
 			intervalId = null;
 		}
 	}
 
-	function handleTap(event: MouseEvent) {
-		if (event.target !== containerRef)
-			return;
-		const rect = containerRef.getBoundingClientRect();
-		const clickX = event.clientX - rect.left; // Click position relative to container
-		const middle = rect.width / 2;
 
-		if (clickX < middle * 0.8) {
-			prev(); // Clicked on left side
-		} else if (clickX > middle * 1.2) {
-			next(); // Clicked on right side
-		}
-	}
-
-
-	onMount(() => {
-		isBrowser = true;
-		if (isBrowser) {
-			startAutoplay();
-		}
-	});
-
-	onDestroy(() => {
-		if (isBrowser) {
-			stopAutoplay();
-		}
-	});
+	onMount(startAutoplay);
+	onDestroy(stopAutoplay);
 </script>
 
 <div
 	bind:this={containerRef}
 	class="carousel-container"
 	role="presentation"
-	onmousedown={handleDragStart}
-	onmousemove={handleDragMove}
-	onmouseup={handleDragEnd}
-	onmouseleave={handleDragEnd}
-	ontouchstart={handleDragStart}
-	ontouchmove={handleDragMove}
-	ontouchend={handleDragEnd}
-	onmouseenter={stopAutoplay}
-	onclick={handleTap}
+	onmousedown={handleMouseDown}
+	onmousemove={handleMouseMove}
+	onmouseup={handleMouseUp}
+	onmouseleave={handleMouseLeave}
+	ontouchstart={handleMouseDown}
+	ontouchmove={handleMouseMove}
+	ontouchend={handleMouseUp}
 >
 
 	<div class="carousel-items">
@@ -156,8 +158,8 @@
 		{/each}
 	</div>
 
-	<button class="nav-button prev" onclick={prev}>&lt;</button>
-	<button class="nav-button next" onclick={next}>&gt;</button>
+	<button class="nav-button prev select-none" onclick={prev}>&lt;</button>
+	<button class="nav-button next select-none" onclick={next}>&gt;</button>
 </div>
 
 <style>
