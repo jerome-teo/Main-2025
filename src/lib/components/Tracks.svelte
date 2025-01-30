@@ -5,32 +5,31 @@
 	import { scrollRef } from 'svelte-scrolling';
 </script>
 
-<section use:scrollRef={"tracks"} id="tracks-div">
-	<h3 id="tracks-title" class="font-extrabold text-fuchsia text-[6vw] sm:text-5xl">Tracks</h3>
+<section use:scrollRef={'tracks'} id="tracks-div">
+	<h3 id="tracks-title" class="text-fuchsia text-[6vw] font-extrabold sm:text-5xl">Tracks</h3>
 	<div class="track-div">
-		<img src={SustainTrack} alt="Sustain Track" id="sustain-image" class="track-image">
+		<img src={SustainTrack} alt="Sustain Track" id="sustain-image" class="track-image" />
 		<p>
-			The refreshing wind from the mountains is calling your name! Remember to leave no trace to 
-			preserve this pristine ecosystem for future generations. Protect the environment by 
-			reducing consumption, wasting less resources, and using what resources we have 
-			more efficiently.
+			The refreshing wind from the mountains is calling your name! Remember to leave no trace to
+			preserve this pristine ecosystem for future generations. Protect the environment by reducing
+			consumption, wasting less resources, and using what resources we have more efficiently.
 		</p>
 	</div>
 	<div class="track-div">
-		<img src={AdventureTrack} alt="Adventure Track" id="adventure-image" class="track-image">
+		<img src={AdventureTrack} alt="Adventure Track" id="adventure-image" class="track-image" />
 		<p>
-			You’ve embarked on your great adventure – now make adventuring easier for others! 
-			Improve public transit usage to help others get on their way! Make public spaces 
-			and the outdoors easier to access, so all travelers are ready to embark on their own journeys.
-		</p>	
+			You’ve embarked on your great adventure – now make adventuring easier for others! Improve
+			public transit usage to help others get on their way! Make public spaces and the outdoors
+			easier to access, so all travelers are ready to embark on their own journeys.
+		</p>
 	</div>
 	<div class="track-div">
-		<img src={CelebrateTrack} alt="Celebrate Track" id="celebrate-image" class="track-image">
+		<img src={CelebrateTrack} alt="Celebrate Track" id="celebrate-image" class="track-image" />
 		<p>
-			You’re a citizen of the world – but remember to connect with your roots! Engage with the 
-			places you’ve been – whether you’re uplifting cultural elements of your community or 
-			bringing everyone together through shared experiences! Uplift and preserve pillars 
-			of the community and spaces that bring joy.
+			You’re a citizen of the world – but remember to connect with your roots! Engage with the
+			places you’ve been – whether you’re uplifting cultural elements of your community or bringing
+			everyone together through shared experiences! Uplift and preserve pillars of the community and
+			spaces that bring joy.
 		</p>
 	</div>
 </section>
@@ -67,7 +66,7 @@
 	}
 
 	#tracks-div p {
-		color: white;
+		color: #3e2b45;
 		font-family: 'Etna';
 		font-size: 14px;
 		text-align: left;

@@ -15,6 +15,14 @@
 	<h1 class="text-fuchsia z-12 w-full text-center text-[6vw] font-extrabold sm:text-5xl">
 		Sponsors
 	</h1>
+	<p class="text-brown z-40 my-4 max-w-2xl px-4 text-center text-lg sm:text-base">
+		Thank you to all our sponsors! This hackathon truly could not happen without your support.<br />
+		If you’d like to consider becoming a sponsor, please check out our sponsorship package!<br />
+		Interested or want to learn more? Email us at:
+		<a href="mailto:sponsor@qwerhacks.org" class="text-fuchsia font-bold underline"
+			>sponsor@qwerhacks.org</a
+		>
+	</p>
 	<Carousel images={[Northrop, L3, PPG, StandOut]}></Carousel>
 </section>
 
