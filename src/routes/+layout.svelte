@@ -26,7 +26,8 @@
 	$effect(() => {
 		document.documentElement.style.setProperty(
 			'background-color',
-			interpolateColor('#0F5E08', '#75761F', transitionProgress)
+			// interpolateColor('#0F5E08', '#75761F', transitionProgress)
+			'#fb8a83'
 		);
 	});
 </script>
@@ -49,5 +50,6 @@
 <style lang="scss">
 	:root {
 		transition: background-color 1s ease;
+		background-color: #fb8a83;
 	}
 </style>
