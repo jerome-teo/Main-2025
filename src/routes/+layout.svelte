@@ -3,9 +3,12 @@
 	import '../app.css';
 
 	import Background from '$lib/components/Background.svelte';
+	import BackgroundBeach from '$lib/components/Background_Beach.svelte';
+
 	import Header from '$lib/components/Header.svelte';
 	import { createDayNightTimer, interpolateColor } from '$lib/typescript/utils.svelte';
 	import { setContext } from 'svelte';
+	// import BackgroundBeach from '$lib/components/Background_Beach.svelte';
 
 	let { children } = $props();
 
@@ -21,13 +24,16 @@
 	}
 
 	$effect(() => {
-		document.documentElement.style.setProperty("background-color", interpolateColor('#0F5E08', '#75761F', transitionProgress));
+		document.documentElement.style.setProperty(
+			'background-color',
+			interpolateColor('#0F5E08', '#75761F', transitionProgress)
+		);
 	});
 </script>
 
 <a
 	id="mlh-trust-badge"
-	class="block fixed top-0 right-[50px] z-10000 w-[10%] max-w-[100px] min-w-[60px]"
+	class="fixed top-0 right-[50px] z-10000 block w-[10%] max-w-[100px] min-w-[60px]"
 	href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"
 	target="_blank"
 	><img
@@ -36,6 +42,7 @@
 	/></a
 >
 <Background {transitionProgress} />
+<BackgroundBeach />
 <Header {theme} {cycleTheme} />
 {@render children()}
 
