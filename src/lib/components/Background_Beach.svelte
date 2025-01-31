@@ -18,7 +18,7 @@
 	// Reactive background color
 </script>
 
-<div class="full-background" style="">
+<div class="full-background" style="" aria-hidden="true">
 	<!-- <img src={Hill} alt="hill" class="w-full top-hill" /> -->
 	<div class="cloud">
 		<img src={Cloud1} alt="cloud" class="h-full w-full" style="" />
