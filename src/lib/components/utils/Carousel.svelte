@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import ButtonBase from './ButtonBase.svelte';
+	import Back from '$lib/media/icons8-back-50.png'
+	import Next from '$lib/media/icons8-next-50.png'
 
 	let { images = [], autoplayInterval = 3000 } = $props();
 
 	// Double the images array to ensure smooth infinite scrolling
-	let extendedImages = [...images, ...images, ...images];
+	let extendedImages = [...images, ...images];
 
 	let currentIndex = $state(0); // Start from the middle set of images
 	let containerRef: HTMLElement | null;
@@ -29,12 +32,13 @@
 				position = 'right';
 			} else if (relativeIndex === 4) {
 				position = 'far-right';
-			} else {
-				position = 'hidden';
 			}
 
+			const { image: src, alt } = image;
+
 			return {
-				image,
+				src,
+				alt,
 				position
 			};
 		})
@@ -91,8 +95,6 @@
 		if (Math.abs(diff) !== 0) return;
 
 		// Else this is a click
-		if (event.target !== containerRef || !containerRef)
-			return;
 		if (event instanceof TouchEvent)
 			event.preventDefault();
 		const rect = containerRef.getBoundingClientRect();
@@ -119,13 +121,15 @@
 		currentIndex = (currentIndex - 1 + extendedImages.length) % extendedImages.length;
 	}
 
-	function startAutoplay() {
+	function startAutoplay(e: any = null) {
+		e && console.log(e.type);
 		if (intervalId === null) {
 			intervalId = setInterval(next, autoplayInterval);
 		}
 	}
 
-	function stopAutoplay() {
+	function stopAutoplay(e: any = null) {
+		e && console.log(e.type);
 		if (intervalId !== null) {
 			clearInterval(intervalId);
 			intervalId = null;
@@ -151,18 +155,22 @@
 >
 
 	<div class="carousel-items">
-		{#each items as { image, position }, i}
+		{#each items as { src, alt, position }, i}
 			<div class="carousel-item {position}">
-				<img src={image} alt={`Slide ${i + 1}`} />
+				<img src={src} alt={alt} />
 			</div>
 		{/each}
 	</div>
 
-	<button class="nav-button prev select-none" onclick={prev}>&lt;</button>
-	<button class="nav-button next select-none" onclick={next}>&gt;</button>
+	<ButtonBase class="absolute top-1/2 -translate-y-1/2 left-1 z-10">
+		<img src={Back} alt="previous" class="p-2 nav-button" aria-hidden="true"/>
+	</ButtonBase>
+	<ButtonBase class="absolute top-1/2 -translate-y-1/2 right-1 z-10">
+		<img src={Next} alt="next" class="p-2 nav-button" aria-hidden="true"/>
+	</ButtonBase>
 </div>
 
-<style>
+<style lang="scss">
 	.carousel-container {
 		position: relative;
 		width: 100%;
@@ -178,6 +186,9 @@
 	}
 
 	.carousel-item {
+		transform: translate(-50%, -50%) scale(0.2);
+		z-index: 1;
+		opacity: 0;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -185,73 +196,61 @@
 		height: 200px;
 		transition: all 0.5s ease;
 		pointer-events: none; /* Prevent images from interfering with drag */
-	}
 
-	.carousel-item img {
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		border-radius: 10px;
-		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-		user-select: none; /* Prevent image selection during drag */
-		-webkit-user-drag: none; /* Prevent image dragging */
-		background-color: rgba(255, 255, 255, 0.8);
-	}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			border-radius: 10px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			user-select: none; /* Prevent image selection during drag */
+			-webkit-user-drag: none; /* Prevent image dragging */
+			background-color: rgba(255, 255, 255, 0.8);
+		}
 
-	/* Center image */
-	.carousel-item.center {
-		transform: translate(-50%, -50%) scale(1);
-		opacity: 1;
-		z-index: 3;
-	}
+		// Center image
+		&.center{
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 1;
+			z-index: 3;
+		}
 
-	/* Left image */
-	.carousel-item.left {
-		transform: translate(-125%, -50%) scale(0.7);
-		opacity: 0.4;
-		z-index: 2;
-	}
+		// Left image
+		&.left {
+			transform: translate(-125%, -50%) scale(0.7);
+			opacity: 0.4;
+			z-index: 2;
+		}
 
-	/* Right image */
-	.carousel-item.right {
-		transform: translate(25%, -50%) scale(0.7);
-		opacity: 0.4;
-		z-index: 2;
-	}
+		// Right image
+		&.right {
+			transform: translate(25%, -50%) scale(0.7);
+			opacity: 0.4;
+			z-index: 2;
+		}
 
-	/* Far left image (entering/leaving) */
-	.carousel-item.far-left {
-		transform: translate(-140%, -50%) scale(0.4);
-		opacity: 0;
-		z-index: 1;
-	}
+		// Far left image (entering/exiting)
+		&.far-left {
+			transform: translate(-140%, -50%) scale(0.4);
+			opacity: 0;
+			z-index: 1;
+		}
 
-	/* Far right image (entering/leaving) */
-	.carousel-item.far-right {
-		transform: translate(40%, -50%) scale(0.4);
-		opacity: 0;
-		z-index: 1;
+		// Far right image (entering/exiting)
+		&.far-right {
+			transform: translate(40%, -50%) scale(0.4);
+			opacity: 0;
+			z-index: 1;
+		}
 	}
 
 	.nav-button {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
 		background: rgba(255, 255, 255, 0.7);
 		border: none;
 		border-radius: 50%;
 		width: 40px;
 		height: 40px;
 		cursor: pointer;
-		z-index: 10;
-	}
-
-	.prev {
-		left: 20px;
-	}
-
-	.next {
-		right: 20px;
 	}
 
 	@media (max-width: 768px) {
@@ -262,6 +261,14 @@
 		.carousel-item {
 			width: 250px;
 			height: 150px;
+
+			&.left {
+				opacity: 0;
+			}
+
+			&.right {
+				opacity: 0;
+			}
 		}
 	}
 </style>

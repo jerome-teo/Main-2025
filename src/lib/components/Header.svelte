@@ -30,7 +30,7 @@
 		<a href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
 	</ButtonBase>
 	<ButtonBase>
-		<button class="mt-1.5 cursor-pointer text-[2rem]" onclick={cycleTheme}>
+		<button class="mt-1.5 cursor-pointer text-[2rem]" aria-label="theme switcher" onclick={cycleTheme}>
 			{theme === 2 ? '🕖' : theme === 1 ? '🌙' : '🌞'}
 		</button>
 	</ButtonBase>

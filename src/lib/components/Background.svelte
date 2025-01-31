@@ -9,7 +9,7 @@
 	let backgroundColor = $derived(interpolateColor('#92ceff', '#4162BF', transitionProgress));
 </script>
 
-<div class="full-background" style="background-color: {backgroundColor}">
+<div class="full-background" style="background-color: {backgroundColor}" aria-hidden="true">
 	<!-- <img src={Hill} alt="hill" class="w-full top-hill" /> -->
 	<img
 		src={Hill_Day}

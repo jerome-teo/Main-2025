@@ -7,16 +7,12 @@
 </script>
 
 <div class="z-4 flex max-w-4/5 flex-col self-end sm:max-w-3/5">
-	<div class="w-full text-left">
-		<h1 class="font-june text-3xl text-white sm:text-5xl">Greetings From</h1>
-	</div>
+	<h1 class="font-june text-3xl text-white sm:text-5xl">Greetings From</h1>
 	<div class="grid w-full grid-cols-1">
-		<img src={Logo_Day} alt="logo" class="qh-logo" />
-		<img src={Logo_Night} alt="logo" class="qh-logo" style="opacity: {transitionProgress()}" />
+		<img src={Logo_Day} alt="qwer hacks" class="qh-logo" />
+		<img src={Logo_Night} alt="logo" class="qh-logo" style="opacity: {transitionProgress()}" aria-hidden="true" />
 	</div>
-	<div class="w-full text-right">
-		<h1 class="font-june text-3xl text-white sm:text-5xl">Feb 1-2, 2025</h1>
-	</div>
+	<h1 class="font-june text-3xl text-white text-right sm:text-5xl">Feb 1-2, 2025</h1>
 </div>
 
 <style lang="scss">

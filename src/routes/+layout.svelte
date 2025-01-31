@@ -32,7 +32,7 @@
 	target="_blank"
 	><img
 		src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-yellow.svg"
-		alt="Major League Hacking 2024 Hackathon Season"
+		alt="Major League Hacking 2025 Hackathon Season"
 	/></a
 >
 <Background {transitionProgress} />
