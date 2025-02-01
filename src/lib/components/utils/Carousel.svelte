@@ -162,10 +162,10 @@
 		{/each}
 	</div>
 
-	<ButtonBase class="absolute top-1/2 -translate-y-1/2 left-1 z-10">
+	<ButtonBase class="absolute top-1/2 -translate-y-1/2 left-1">
 		<img src={Back} alt="previous" class="p-2 nav-button" aria-hidden="true"/>
 	</ButtonBase>
-	<ButtonBase class="absolute top-1/2 -translate-y-1/2 right-1 z-10">
+	<ButtonBase class="absolute top-1/2 -translate-y-1/2 right-1">
 		<img src={Next} alt="next" class="p-2 nav-button" aria-hidden="true"/>
 	</ButtonBase>
 </div>
@@ -187,7 +187,6 @@
 
 	.carousel-item {
 		transform: translate(-50%, -50%) scale(0.2);
-		z-index: 1;
 		opacity: 0;
 		position: absolute;
 		top: 50%;
@@ -212,35 +211,31 @@
 		&.center{
 			transform: translate(-50%, -50%) scale(1);
 			opacity: 1;
-			z-index: 3;
+			z-index: 2;
 		}
 
 		// Left image
 		&.left {
 			transform: translate(-125%, -50%) scale(0.7);
 			opacity: 0.4;
-			z-index: 2;
+			z-index: 1;
 		}
 
 		// Right image
 		&.right {
 			transform: translate(25%, -50%) scale(0.7);
 			opacity: 0.4;
-			z-index: 2;
+			z-index: 1;
 		}
 
 		// Far left image (entering/exiting)
 		&.far-left {
 			transform: translate(-140%, -50%) scale(0.4);
-			opacity: 0;
-			z-index: 1;
 		}
 
 		// Far right image (entering/exiting)
 		&.far-right {
 			transform: translate(40%, -50%) scale(0.4);
-			opacity: 0;
-			z-index: 1;
 		}
 	}
 

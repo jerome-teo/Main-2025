@@ -6,7 +6,7 @@
 	const transitionProgress = getContext('transitionProgress') as () => number;
 </script>
 
-<div class="z-4 flex max-w-4/5 flex-col self-end sm:max-w-3/5">
+<div class="flex mt-30 mx-3 sm:mx-7 md:mt-50 lg:mt-75 max-w-4/5 flex-col self-end sm:max-w-3/5">
 	<h1 class="font-june text-3xl text-white sm:text-5xl">Greetings From</h1>
 	<div class="grid w-full grid-cols-1">
 		<img src={Logo_Day} alt="qwer hacks" class="qh-logo" />

@@ -5,13 +5,46 @@
 	import Tracks from '$lib/components/Tracks.svelte';
 	import Sponsors from '$lib/components/Sponsors.svelte';
 	import Schedule from '$lib/components/Schedule.svelte';
+	import BackgroundBeach from '$lib/components/Background_Beach.svelte';
+	import Background from '$lib/components/Background.svelte';
 </script>
 
-<div class="mx-3 mt-30 flex flex-col sm:mx-7 md:mt-50 lg:mt-75">
-	<Hero />
-	<Info />
-	<Tracks />
-	<FAQ />
-	<Schedule />
-	<Sponsors />
+<div class="flex flex-col items-center">
+	<div class= "flex flex-col items-center w-full relative">
+		<div class="hill-container">
+			<Background />
+		</div>
+		<Hero />
+		<Info />
+		<Tracks />
+	</div>
+	
+	<div class="flex flex-col items-center w-full relative">
+		<div class="beach-container">
+			<BackgroundBeach />
+		</div>
+		<FAQ />
+		<Schedule />
+		<Sponsors />
+	</div>
 </div>
+
+<style lang="scss">
+	.beach-container {
+		position: absolute;
+		margin-top: -10%;
+		width: 100vw;
+		z-index: -1;
+
+		@media screen and (min-width: 2560px) {
+			height: 110%;
+		}
+	}
+
+	.hill-container {
+		position: absolute;
+		width: 100vw;
+		z-index: -1;
+		height: 100%;
+	}
+</style>

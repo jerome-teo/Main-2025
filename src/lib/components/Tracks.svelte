@@ -5,7 +5,7 @@
 	import { scrollRef } from 'svelte-scrolling';
 </script>
 
-<section use:scrollRef={"tracks"} id="tracks-div">
+<section use:scrollRef={"tracks"} id="tracks-div" class="text-paper">
 	<h1 id="tracks-title" class="font-extrabold text-fuchsia text-[6vw] sm:text-5xl">Tracks</h1>
 	<div class="track-div">
 		<img src={SustainTrack} alt="Sustain Track" id="sustain-image" class="track-image" />
@@ -34,19 +34,11 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	#tracks-div {
-		position: relative;
-		margin: 0 auto;
-		margin-top: 5rem;
-		z-index: 20;
 		text-align: center;
-		width: 90%;
 		max-width: 1200px;
-	}
-
-	#tracks-title {
-		margin-bottom: 2rem;
+		margin: 5rem 0;
 	}
 
 	.track-div {
@@ -66,10 +58,8 @@
 	}
 
 	#tracks-div p {
-		color: #3e2b45;
-		font-family: 'Etna';
-		font-size: 14px;
 		text-align: left;
+		font-size: 1.1rem;
 		margin: 0;
 		flex: 1;
 	}
@@ -88,7 +78,16 @@
 		transform: rotate(-7.05deg);
 	}
 
-	@media (max-aspect-ratio: 8/5) {
+	@media (max-width: 48rem) {
+		#tracks-div {
+			margin: 0;
+			margin-top: 3rem;
+
+			p {
+				font-size: 4vw;
+			}
+		}
+
 		.track-div {
 			flex-direction: column;
 			width: 65vw;

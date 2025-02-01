@@ -23,33 +23,43 @@
 		else theme += 1;
 	}
 
-	$effect(() => {
-		document.documentElement.style.setProperty(
-			'background-color',
-			// interpolateColor('#0F5E08', '#75761F', transitionProgress)
-			'#fb8a83'
-		);
-	});
+	// $effect(() => {
+	// 	document.documentElement.style.setProperty(
+	// 		'background-color',
+	// 		// interpolateColor('#0F5E08', '#75761F', transitionProgress)
+	// 		'#fb8a83'
+	// 	);
+	// });
 </script>
 
-<a
-	id="mlh-trust-badge"
-	class="fixed top-0 right-[50px] z-10000 block w-[10%] max-w-[100px] min-w-[60px]"
-	href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"
-	target="_blank"
-	><img
-		src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-yellow.svg"
-		alt="Major League Hacking 2025 Hackathon Season"
-	/></a
->
-<Background {transitionProgress} />
-<BackgroundBeach />
-<Header {theme} {cycleTheme} />
-{@render children()}
+<div class="flex w-full flex-col relative">
+	<a
+		id="mlh-trust-badge"
+		class="fixed top-0 right-[50px] z-10000 block w-[10%] max-w-[100px] min-w-[60px]"
+		href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=yellow"
+		target="_blank"
+		><img
+			src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-yellow.svg"
+			alt="Major League Hacking 2025 Hackathon Season"
+		/></a
+	>
+	<Header {theme} {cycleTheme} />
+	{@render children()}
+</div>
 
 <style lang="scss">
+	.background-container {
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		overflow-y: hidden;
+		z-index: -1;
+		display: flex;
+		flex-direction: column;
+	}
+
 	:root {
-		transition: background-color 1s ease;
-		background-color: #fb8a83;
+		background-color: #FB8A83;
 	}
 </style>

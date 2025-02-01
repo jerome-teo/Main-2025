@@ -26,7 +26,7 @@ $bg-dark: hsl(24, 3%, 69%);
 
 .schedule-container {
 	padding: 3.5rem;
-	height: $hour-scale * 6;
+	height: $hour-scale * 12;
 	overflow: hidden;
 	min-width: 50%;
 	display: flex;
@@ -229,12 +229,18 @@ $bg-dark: hsl(24, 3%, 69%);
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	.schedule-container {
 		padding: 3.5rem 0;
 		width: 100%;
 	}
 	.content {
 		width: 90% !important;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.schedule-container {
+		height: $hour-scale * 6;
 	}
 }

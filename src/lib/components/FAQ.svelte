@@ -3,6 +3,7 @@
 	import { scrollRef } from 'svelte-scrolling';
 	import ApplyNowButton from './ApplyNowButton.svelte';
 	import ButtonBase from './utils/ButtonBase.svelte';
+	import BackgroundBeach from './Background_Beach.svelte';
 
 	let faqs = [
 		{
@@ -35,9 +36,9 @@
 	let messagebox = "can't wait to go :>";
 </script>
 
-<section use:scrollRef={"faq"} class="w-full flex flex-col items-center mt-[5rem]">
+<section use:scrollRef={"faq"} class="w-full flex flex-col items-center mt-[5rem] relative">
 	<h1
-		class="w-full text-center text-fuchsia z-12 text-[6vw] sm:text-5xl font-extrabold"
+		class="w-full text-center text-fuchsia text-[6vw] sm:text-5xl font-extrabold mt-[8vw] sm:mt-16"
 	>
 		Frequently Asked Questions
 	</h1>
@@ -78,10 +79,9 @@
 <style lang="scss">
 	.passport {
 		// top: 340%;
-		margin-top: 5rem;
+		margin-top: 2rem;
 		max-width: 80%;
 		width: 600px;
-		z-index: 11;
 		background: url('/src/lib/media/Passport.svg') no-repeat center center;
 		background-size: contain;
 
@@ -105,7 +105,7 @@
 		}
 
 		@media (width < 48rem) {
-			margin-top: 8vw;
+			margin-top: 5vw;
 
 			p {
 				font-size: 2vw;
