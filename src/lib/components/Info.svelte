@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { scrollRef } from 'svelte-scrolling';
 </script>
 
-<section use:scrollRef={"about"} class="flex flex-col w-full items-center text-brown relative">
+<section id="about" class="flex flex-col w-full items-center text-brown relative">
 	<div class="postcard about-postcard rotate-4 flex flex-row aspect-1207/714">
 		<div class="w-1/2 pl-[3.5vw] pr-[3vw] pt-[5vw] md:p-10">
 			<h1>About:</h1>

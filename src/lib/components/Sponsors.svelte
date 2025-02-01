@@ -1,5 +1,4 @@
 <script lang="js">
-	import { scrollRef } from 'svelte-scrolling';
 	import StandOut from '$lib/media/stand-out-stickers-logo.svg';
 	import L3 from '$lib/media/L3Harris.svg';
 	import Northrop from '$lib/media/Northrop.svg';
@@ -26,7 +25,7 @@
 	]
 </script>
 
-<section use:scrollRef={'sponsors'} id="" class="mt-[5rem] flex w-full flex-col items-center">
+<section id="sponsors" class="mt-[5rem] flex w-full flex-col items-center">
 	<h1 class="text-brown w-full text-center">
 		Sponsors
 	</h1>
