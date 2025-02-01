@@ -78,7 +78,7 @@
 		transform: rotate(-7.05deg);
 	}
 
-	@media (max-width: 48rem) {
+	@media (max-width: 40rem) {
 		#tracks-div {
 			margin: 0;
 			margin-top: 3rem;

@@ -19,7 +19,7 @@
 		<Tracks />
 	</div>
 	
-	<div class="flex flex-col items-center w-full relative">
+	<div class="flex flex-col items-center w-full relative -mt-10 md:-mt-40">
 		<div class="beach-container">
 			<BackgroundBeach />
 		</div>
@@ -32,13 +32,9 @@
 <style lang="scss">
 	.beach-container {
 		position: absolute;
-		margin-top: -10%;
 		width: 100vw;
 		z-index: -1;
-
-		@media screen and (min-width: 2560px) {
-			height: 110%;
-		}
+		height: 100%;
 	}
 
 	.hill-container {

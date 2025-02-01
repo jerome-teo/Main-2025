@@ -38,7 +38,7 @@
 
 <section use:scrollRef={"faq"} class="w-full flex flex-col items-center mt-[5rem] relative">
 	<h1
-		class="w-full text-center text-fuchsia text-[6vw] sm:text-5xl font-extrabold mt-[8vw] sm:mt-16"
+		class="w-full text-center text-fuchsia text-[6vw] sm:text-5xl font-extrabold mt-[8vw] sm:mt-36"
 	>
 		Frequently Asked Questions
 	</h1>
