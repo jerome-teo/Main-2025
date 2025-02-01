@@ -6,13 +6,13 @@
 	import Sky from '$lib/media/Purple_Sky.svg';
 </script>
 
-<div class="full-background overflow-hidden items-center" aria-hidden="true">
-	<div class="justify-items-center grid">
-		<img src={Cloud1} alt="cloud" class="cloud"/>
+<div class="full-background items-center overflow-hidden" aria-hidden="true">
+	<div class="grid justify-items-center">
+		<img src={Cloud1} alt="cloud" class="cloud" />
 		<img src={Sky} alt="sky" class="sky" />
 	</div>
 	<img src={Shore} alt="shore" class="shore md:-mt-[60vw]" />
-	<div class="justify-items-center grid md:-mt-[30vw]">
+	<div class="grid justify-items-center md:-mt-[30vw]">
 		<img src={Cloud2} alt="cloud" class="cloud2" />
 		<img src={OrangeSky} alt="sky" class="sky2" />
 	</div>
@@ -43,28 +43,29 @@
 		max-width: unset;
 		width: 100%;
 	}
-	
-	
+
 	.cloud {
 		width: 130%;
 		margin-left: 10%;
 		z-index: 1;
+		animation: wave-sway 4s ease-in-out infinite alternate;
 	}
 
 	.sky {
 		margin-top: -5%;
 	}
-	
+
 	.shore {
 		width: 200%;
 		margin-left: 35%; /* Centers the oversized image */
-		animation: wave-sway 3s ease-in-out infinite alternate;
+		animation: wave-sway 2s ease-in-out infinite alternate;
 	}
 
 	.cloud2 {
 		width: 130%;
 		margin-top: -30%;
 		z-index: 2;
+		animation: wave-sway 4s ease-in-out infinite alternate;
 	}
 
 	.sky2 {
