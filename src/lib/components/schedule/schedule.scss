@@ -3,38 +3,48 @@ $hour-scale: 150px;
 $inset-margin: 2px; // how much the box should be squished inwards
 $outline-width: 3px; // width of background-colored border
 $shorten-margin: 5px; // how much should be taken off the bottom (a la google calendar)
-$tracker-height: ($hour-scale * 32);
+$tracker-height: (
+	$hour-scale * 32
+);
 
 $bg: #fff9f5;
 $bg-dark: hsl(24, 3%, 69%);
 
 .green {
-    background: #9DD191;
+	background: #9DD191;
 }
+
 .lightblue {
-    background: #A4DFE6;
+	background: #A4DFE6;
 }
+
 .plum {
-    background: #E1A0C5;
+	background: #E1A0C5;
 }
+
 .coral {
-    background: #f15f72;
+	background: #f15f72;
 }
+
 .yellow {
-    background: #FCD885;
+	background: #FCD885;
 }
 
 .schedule-container {
 	padding: 3.5rem;
+	// height: $hour-scale * 16;
+	// height: auto; // Let it expand dynamically
 	height: $hour-scale * 12;
 	overflow: hidden;
 	min-width: 50%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
 	.header h2 {
 		margin-block-start: 0;
 	}
+
 	.content {
 		outline: solid 1px black;
 		width: 65%;
@@ -65,9 +75,11 @@ $bg-dark: hsl(24, 3%, 69%);
 			min-width: 100%;
 			position: relative;
 			font-size: smaller;
+
 			&.half {
 				border-top: solid 1px rgb(199, 199, 199);
 			}
+
 			span {
 				outline: solid $bg 8px;
 				outline-offset: 0px;
@@ -89,9 +101,11 @@ $bg-dark: hsl(24, 3%, 69%);
 			//mix-blend-mode: multiply;
 			z-index: 150;
 			backdrop-filter: saturate(0);
+
 			&[class*='hidden'] {
 				display: none;
 			}
+
 			.circle {
 				width: 1.5rem;
 				height: 1.5rem;
@@ -128,42 +142,53 @@ $bg-dark: hsl(24, 3%, 69%);
         */
 			background: #abd7a2;
 			border-top-color: #00000044;
+
 			&[class*='green'] {
 				background: #9DD191;
 			}
+
 			&[class*='lightblue'] {
 				background: #A4DFE6;
 			}
-            &[class*='plum'] {
-                background: #E1A0C5;
-            }
+
+			&[class*='plum'] {
+				background: #E1A0C5;
+			}
+
 			&[class*='coral'] {
 				background: #f15f72;
 			}
+
 			&[class*='yellow'] {
 				background: #FCD885;
 			}
+
 			/*
             Width logic
         */
 			&[class*='w1'] {
 				width: (1/3) * 100%;
 			}
+
 			&[class*='w2'] {
 				width: (2/3) * 100%;
 			}
+
 			&[class*='w3'] {
 				width: 100%;
 			}
+
 			/*
             Column logic
         */
 			&[class*='c0'] {
 				left: 0%;
 			}
+
 			&[class*='c1'] {
 				left: (1/3) * 100%;
 			}
+
 			&[class*='c2'] {
 				left: (2/3) * 100%;
 			}
@@ -179,50 +204,61 @@ $bg-dark: hsl(24, 3%, 69%);
 			// }
 			transition: opacity 0.5s ease;
 			opacity: 0.9;
+
 			&:hover {
 				opacity: 1 !important;
+
 				.inner {
 					visibility: visible;
 				}
 			}
+
 			&.hovered {
 				opacity: 0.5;
 			}
+
 			.inner {
 				visibility: hidden;
 			}
 		}
-		@for $tensofminutes from 0 through 192 {
+
+		@for $tensofminutes from 0 through 252 {
 			.event.h#{$tensofminutes} {
 				top: ($tensofminutes) * $hour-scale * (1/6) + $inset-margin; // + ($tensofminutes * (1/6))
+
 				&[class*='c0'] {
 					z-index: $tensofminutes;
 				}
+
 				&[class*='c1'] {
 					z-index: $tensofminutes;
 				}
+
 				&[class*='c2'] {
 					z-index: $tensofminutes;
 				}
 			}
+
 			.spacer.h#{$tensofminutes} {
 				top: $tensofminutes * $hour-scale * (1/6);
+
 				&[class*='half'] {
 					top: $tensofminutes * $hour-scale * (1/6) + ($hour-scale * 0.5);
 				}
+
 				// &::before {
 				//     content: $hr;
 				// }
 			}
+
 			.tracker.h#{$tensofminutes} {
 				top: calc(($tensofminutes * $hour-scale * (1 / 6)) - $tracker-height + 2px);
 			}
 		}
+
 		@for $tenminuteslength from 1 through 18 {
 			.event[class*='h'].l#{$tenminuteslength} {
-				height: ($tenminuteslength * $hour-scale * (1/6)) -
-					$shorten-margin -
-					$inset-margin; // - 4px;
+				height: ($tenminuteslength * $hour-scale * (1/6)) - $shorten-margin - $inset-margin; // - 4px;
 			}
 		}
 	}
@@ -233,6 +269,7 @@ $bg-dark: hsl(24, 3%, 69%);
 		padding: 3.5rem 0;
 		width: 100%;
 	}
+
 	.content {
 		width: 90% !important;
 	}
@@ -240,6 +277,6 @@ $bg-dark: hsl(24, 3%, 69%);
 
 @media screen and (max-width: 1024px) {
 	.schedule-container {
-		height: $hour-scale * 6;
+		height: $hour-scale * 8;
 	}
 }
