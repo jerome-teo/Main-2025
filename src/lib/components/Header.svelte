@@ -24,6 +24,9 @@
 		<button use:scrollTo={'faq'}>FAQ</button>
 	</ButtonBase>
 	<ButtonBase>
+		<button use:scrollTo={'schedule'}>Schedule</button>
+	</ButtonBase>
+	<ButtonBase>
 		<button use:scrollTo={'sponsors'}>Sponsors</button>
 	</ButtonBase>
 	<ButtonBase class="bg-fuchsia mx-3 rounded-3xl">
@@ -70,4 +73,7 @@
 </div>
 
 <style lang="scss">
+	button {
+		cursor: pointer;
+	}
 </style>

@@ -3,6 +3,7 @@
 
 	import Event from './schedule/event.svelte';
 	import './schedule/schedule.scss';
+	import { scrollRef } from 'svelte-scrolling';
 
 	const ColorMap = {
 		food: 'green',
@@ -548,9 +549,9 @@ Time to see which cool prizes u won in our closing presentation <3 🏆`,
 	});
 </script>
 
-<div class="schedule-container z-1 text-fuchsia" on:loadstart={updateTrackerTime()} on:mouseup>
+<section use:scrollRef={"schedule"} class="schedule-container z-1" on:loadstart={updateTrackerTime()} on:mouseup>
 	<div class="header flex max-w-full flex-col items-center px-6">
-		<h2 class="text-center">day of events</h2>
+		<h1 class="text-center text-fuchsia mb-1">Day of Events</h1>
 		<p class="text-center">
 			We're so excited to see you all soon! Here's a sneak peek at what we'll
 			have happening:
@@ -591,4 +592,4 @@ Time to see which cool prizes u won in our closing presentation <3 🏆`,
 			<div class="circle" />
 		</div>
 	</div>
-</div>
+</section>

@@ -27,7 +27,7 @@
 </script>
 
 <section use:scrollRef={'sponsors'} id="" class="mt-[5rem] flex w-full flex-col items-center">
-	<h1 class="text-fuchsia w-full text-center text-[6vw] font-extrabold sm:text-5xl">
+	<h1 class="text-brown w-full text-center">
 		Sponsors
 	</h1>
 	<p class="text-brown my-4 max-w-2xl px-4 text-center text-lg sm:text-base">

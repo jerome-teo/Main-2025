@@ -6,7 +6,7 @@
 </script>
 
 <section use:scrollRef={"tracks"} id="tracks-div" class="text-paper">
-	<h1 id="tracks-title" class="font-extrabold text-fuchsia text-[6vw] sm:text-5xl">Tracks</h1>
+	<h1 id="tracks-title" class="text-fuchsia">Tracks</h1>
 	<div class="track-div">
 		<img src={SustainTrack} alt="Sustain Track" id="sustain-image" class="track-image" />
 		<p>
