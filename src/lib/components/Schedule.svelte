@@ -166,9 +166,7 @@ Jk, Evy Nguyen from ACM W is here to help you 👩‍❤️‍💋‍👩u liter
 		},
 		{
 			title: 'ACM Hack Technical Workshop',
-			description: `Still confused about Git/Version Control? Don’t GIT too sad ab it (heheh) 😏
-
-Evy Nguyen from ACM W is here to the rescue!!!!! She will answer all ur silly qs`,
+			description: "Still confused about full stack? Don’t GIT too sad ab it (heheh) 😏 Shiyu Ye from ACM Hack is here to the rescue!!!!! She will answer all ur silly Qs",
 			hour_start: 7,
 			location: 'hermosa room',
 			minute_start: 0,
@@ -180,9 +178,7 @@ Evy Nguyen from ACM W is here to the rescue!!!!! She will answer all ur silly qs
 		{
 			title: 'UX Design & User Research Workshop',
 			location: 'main room',
-			description: `Ur ex’s red flags aren’t the only flags u need to be worrying ab tonight 😏🚩
-
-Sit back and relax for CTF, put on by our friends at MLH!`,
+			description: "Join LA Blueprint's User Research Design Workshop to learn everything from what User Experience is, process behind Design Thinking, and how to apply them in your own projects!",
 			hour_start: 8,
 			minute_start: 0,
 			length_minutes: 60,
@@ -413,9 +409,7 @@ Meanwhile, enjoy our workshop on how to pitch to judges for a maximized joint sl
 		},
 		{
 			title: `Raye's Tech for Good Career Workshop`,
-			// description: `JUST A FEW MORE HOURS BESTIES 💪
-
-			// Meanwhile, enjoy our workshop on how to pitch to judges for a maximized joint slay between u and ur teammates 🤓`,
+			description: "So you want to use tech for good? Will our new tech billionaire oligarchs let us? This workshop will take an honest look at the current state of tech, and figure out if it is still possible to use tech for good (spoiler: it is). Raye will delve into their personal complicated experiences working for a progressive data company and offer insights and practical tips on how you can use your tech skills for causes you care about.",
 			hour_start: 27,
 			minute_start: 0,
 			length_minutes: 60,
@@ -450,9 +444,7 @@ Go grab ur scrumdiddly yum lunch now, u deserve it <3`,
 		},
 		{
 			title: `Entrepreneurship, Pitching Workshop`,
-			// description: `JUST A FEW MORE HOURS BESTIES 💪
-
-			// Meanwhile, enjoy our workshop on how to pitch to judges for a maximized joint slay between u and ur teammates 🤓`,
+			description: "This workshop explores the fundamentals of entrepreneurship through the lens of a technical founder. Participants will learn how to transform an initial idea into a scalable and impactful business model. Key topics include leveraging personal identity as a strategic advantage, building supportive networks for capital, mentorship, and partnerships, and navigating the startup lifecycle. The session will also cover practical guidance on starting, pitching, and funding a business. Time permitting, students will have the opportunity to present brief pitches for live feedback.",
 			hour_start: 29,
 			minute_start: 30,
 			length_minutes: 60,
