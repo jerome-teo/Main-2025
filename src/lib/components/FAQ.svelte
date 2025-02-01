@@ -35,10 +35,8 @@
 	let messagebox = "can't wait to go :>";
 </script>
 
-<section use:scrollRef={"faq"} class="w-full flex flex-col items-center mt-[5rem]">
-	<h1
-		class="w-full text-center text-fuchsia z-12 text-[6vw] sm:text-5xl font-extrabold"
-	>
+<section use:scrollRef={"faq"} class="w-full flex flex-col items-center mt-[5rem] z-0">
+	<h1 class="text-fuchsia">
 		Frequently Asked Questions
 	</h1>
 	<div class="passport flex flex-col aspect-1315/1500 overflow-hidden text-[#4162bf]">

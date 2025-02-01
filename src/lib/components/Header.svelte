@@ -26,6 +26,9 @@
 	<ButtonBase>
 		<button use:scrollTo={'sponsors'}>Sponsors</button>
 	</ButtonBase>
+	<ButtonBase>
+		<button use:scrollTo={'schedule'}>Schedule</button>
+	</ButtonBase>
 	<ButtonBase class="bg-fuchsia mx-3 rounded-3xl">
 		<a href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
 	</ButtonBase>
