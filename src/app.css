@@ -18,7 +18,7 @@
 		@apply font-etna font-bold capitalize;
 	}
 	h1 {
-		@apply text-5xl;
+		@apply text-[6vw] sm:text-5xl font-extrabold;
 		@apply font-etna font-bold;
 	}
 	h2 {

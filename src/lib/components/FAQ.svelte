@@ -1,9 +1,5 @@
 <script lang="ts">
-	import Passport from '$lib/media/Passport.svg';
-	import { scrollRef } from 'svelte-scrolling';
-	import ApplyNowButton from './ApplyNowButton.svelte';
 	import ButtonBase from './utils/ButtonBase.svelte';
-	import BackgroundBeach from './Background_Beach.svelte';
 
 	let faqs = [
 		{
@@ -36,10 +32,8 @@
 	let messagebox = "can't wait to go :>";
 </script>
 
-<section use:scrollRef={"faq"} class="w-full flex flex-col items-center mt-[5rem] relative">
-	<h1
-		class="w-full text-center text-fuchsia text-[6vw] sm:text-5xl font-extrabold mt-[8vw] sm:mt-16"
-	>
+<section id="faq" class="w-full flex flex-col items-center mt-[5rem] relative">
+	<h1 class="text-fuchsia mt-[8vw] sm:mt-36">
 		Frequently Asked Questions
 	</h1>
 	<div class="passport flex flex-col aspect-1315/1500 overflow-hidden text-[#4162bf]">

@@ -2,11 +2,10 @@
 	import AdventureTrack from '$lib/media/AdventureTrack.svg';
 	import CelebrateTrack from '$lib/media/CelebrateTrack.svg';
 	import SustainTrack from '$lib/media/SustainTrack.svg';
-	import { scrollRef } from 'svelte-scrolling';
 </script>
 
-<section use:scrollRef={"tracks"} id="tracks-div" class="text-paper">
-	<h1 id="tracks-title" class="font-extrabold text-fuchsia text-[6vw] sm:text-5xl">Tracks</h1>
+<section id="tracks-div" class="text-paper">
+	<h1 id="tracks-title" class="text-fuchsia">Tracks</h1>
 	<div class="track-div">
 		<img src={SustainTrack} alt="Sustain Track" id="sustain-image" class="track-image" />
 		<p>
@@ -78,7 +77,7 @@
 		transform: rotate(-7.05deg);
 	}
 
-	@media (max-width: 48rem) {
+	@media (max-width: 40rem) {
 		#tracks-div {
 			margin: 0;
 			margin-top: 3rem;

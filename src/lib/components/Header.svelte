@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { scrollTo, scrollTop } from 'svelte-scrolling';
 	import ButtonBase from './utils/ButtonBase.svelte';
 	import Menu from '$lib/media/menu.svg';
 	import { slide } from 'svelte/transition';
@@ -8,23 +7,30 @@
 	let showMenu = $state(false);
 	let menuDiv: HTMLElement | null;
 	let menuButton: HTMLElement | null;
+
+	function scrollTo(id: string) {
+		document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+	}
 </script>
 
 {#snippet menu()}
 	<ButtonBase>
-		<button onclick={() => scrollTop()}>Home</button>
+		<button onclick={()=>window.scrollTo({ top: 0, behavior: "smooth" })}>Home</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button use:scrollTo={'about'}>About</button>
+		<button onclick={()=>scrollTo('about')}>About</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button use:scrollTo={'tracks'}>Tracks</button>
+		<button onclick={()=>scrollTo('tracks-div')}>Tracks</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button use:scrollTo={'faq'}>FAQ</button>
+		<button onclick={()=>scrollTo('faq')}>FAQ</button>
 	</ButtonBase>
 	<ButtonBase>
-		<button use:scrollTo={'sponsors'}>Sponsors</button>
+		<button onclick={()=>scrollTo('schedule')}>Schedule</button>
+	</ButtonBase>
+	<ButtonBase>
+		<button onclick={()=>scrollTo('sponsors')}>Sponsors</button>
 	</ButtonBase>
 	<ButtonBase class="bg-fuchsia mx-3 rounded-3xl">
 		<a href="https://tinyurl.com/qwerhacks25" target="_blank">Apply Now!</a>
@@ -70,4 +76,7 @@
 </div>
 
 <style lang="scss">
+	button {
+		cursor: pointer;
+	}
 </style>
