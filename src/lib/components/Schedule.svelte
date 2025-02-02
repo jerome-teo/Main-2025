@@ -166,7 +166,8 @@ Jk, Evy Nguyen from ACM W is here to help you 👩‍❤️‍💋‍👩u liter
 		},
 		{
 			title: 'ACM Hack Technical Workshop',
-			description: "Still confused about full stack? Don’t GIT too sad ab it (heheh) 😏 Shiyu Ye from ACM Hack is here to the rescue!!!!! She will answer all ur silly Qs",
+			description:
+				'Still confused about full stack? Don’t GIT too sad ab it (heheh) 😏 Shiyu Ye from ACM Hack is here to the rescue!!!!! She will answer all ur silly Qs',
 			hour_start: 7,
 			location: 'hermosa room',
 			minute_start: 0,
@@ -178,7 +179,8 @@ Jk, Evy Nguyen from ACM W is here to help you 👩‍❤️‍💋‍👩u liter
 		{
 			title: 'UX Design & User Research Workshop',
 			location: 'main room',
-			description: "Join LA Blueprint's User Research Design Workshop to learn everything from what User Experience is, process behind Design Thinking, and how to apply them in your own projects!",
+			description:
+				"Join LA Blueprint's User Research Design Workshop to learn everything from what User Experience is, process behind Design Thinking, and how to apply them in your own projects!",
 			hour_start: 8,
 			minute_start: 0,
 			length_minutes: 60,
@@ -409,7 +411,8 @@ Meanwhile, enjoy our workshop on how to pitch to judges for a maximized joint sl
 		},
 		{
 			title: `Raye's Tech for Good Career Workshop`,
-			description: "So you want to use tech for good? Will our new tech billionaire oligarchs let us? This workshop will take an honest look at the current state of tech, and figure out if it is still possible to use tech for good (spoiler: it is). Raye will delve into their personal complicated experiences working for a progressive data company and offer insights and practical tips on how you can use your tech skills for causes you care about.",
+			description:
+				'So you want to use tech for good? Will our new tech billionaire oligarchs let us? This workshop will take an honest look at the current state of tech, and figure out if it is still possible to use tech for good (spoiler: it is). Raye will delve into their personal complicated experiences working for a progressive data company and offer insights and practical tips on how you can use your tech skills for causes you care about.',
 			hour_start: 27,
 			minute_start: 0,
 			length_minutes: 60,
@@ -444,7 +447,8 @@ Go grab ur scrumdiddly yum lunch now, u deserve it <3`,
 		},
 		{
 			title: `Entrepreneurship, Pitching Workshop`,
-			description: "This workshop explores the fundamentals of entrepreneurship through the lens of a technical founder. Participants will learn how to transform an initial idea into a scalable and impactful business model. Key topics include leveraging personal identity as a strategic advantage, building supportive networks for capital, mentorship, and partnerships, and navigating the startup lifecycle. The session will also cover practical guidance on starting, pitching, and funding a business. Time permitting, students will have the opportunity to present brief pitches for live feedback.",
+			description:
+				'This workshop explores the fundamentals of entrepreneurship through the lens of a technical founder. Participants will learn how to transform an initial idea into a scalable and impactful business model. Key topics include leveraging personal identity as a strategic advantage, building supportive networks for capital, mentorship, and partnerships, and navigating the startup lifecycle. The session will also cover practical guidance on starting, pitching, and funding a business. Time permitting, students will have the opportunity to present brief pitches for live feedback.',
 			hour_start: 29,
 			minute_start: 30,
 			length_minutes: 60,
@@ -497,7 +501,7 @@ Submit your hacks on Devpost now !! ⚠️`,
 		// 		},
 		{
 			title: 'Judging',
-			hour_start: 33,
+			hour_start: 31,
 			minute_start: 30,
 			length_minutes: 120,
 			display_width: 2,
@@ -531,7 +535,7 @@ Submit your hacks on Devpost now !! ⚠️`,
 			description: `DRUMROLL PLEASE… 🥁
 
 Time to see which cool prizes u won in our closing presentation <3 🏆`,
-			hour_start: 35,
+			hour_start: 33,
 			minute_start: 30,
 			length_minutes: 90,
 			display_width: 3,
@@ -544,7 +548,7 @@ Time to see which cool prizes u won in our closing presentation <3 🏆`,
 
 Plz go and get ur dinner, friends.`,
 			location: 'main room',
-			hour_start: 37,
+			hour_start: 35,
 			minute_start: 0,
 			length_minutes: 60,
 			display_width: 3,
